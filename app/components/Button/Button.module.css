@@ -27,3 +27,22 @@
     background: var(--primary-hover);
     border: none;
 }
+
+.ghost:hover svg {
+    fill: var(--white);
+}
+
+.arrow {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.right {
+    transform: rotate(0deg);
+    transition: all 0.3s;
+}
+
+.down {
+    transform: rotate(90deg);
+    transition: all 0.3s;
+}

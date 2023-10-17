@@ -1,15 +1,37 @@
-import { Button, Htag } from "./components";
-import Icon from "../public/next.svg";
+"use client";
+import { useState } from "react";
+import { Button, Htag, P, Rating, Tag } from "./components";
 
 export default function Home(): JSX.Element {
+    const [rating, setRating] = useState(0);
     return (
         <>
-            <Htag tag="h1">dfgsdfghsdfgsd</Htag>
-            <Icon />
-            <Button appearance="primary" className="sdfsdfs">
-                Button
+            <Htag tag="h1">Курси по Photoshop</Htag>
+            <P>
+                Студенты освоят не только hard skills, необходимые для работы
+                веб-дизайнером, но и soft skills — навыки, которые позволят
+                эффективно взаимодействовать в команде с менеджерами,
+                разработчиками и маркетологами. Выпускники факультета могут
+                успешно конкурировать с веб-дизайнерами уровня middle.
+            </P>
+            <Tag>Photoshop</Tag>
+            <Tag size="l" color="red" href="https://site.ua">
+                site.ua
+            </Tag>
+            <Tag size="l" color="grey">
+                10
+            </Tag>
+            <Tag size="s" color="primary">
+                Работа в Photoshop
+            </Tag>
+            <Tag size="s" color="green">
+                -10 000 ₽
+            </Tag>
+            <Button>Узнать подробнее</Button>
+            <Button appearance="ghost" arrow="add">
+                Читать отзывы
             </Button>
-            <Button appearance="ghost">Button</Button>
+            <Rating rating={rating} setRating={setRating} isEditable />
         </>
     );
 }

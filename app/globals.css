@@ -7,6 +7,7 @@
     --orange: #fc836d;
     --green: #1dc37e;
     --green-light: #c8f8e4;
+    --grey: #b3c0d9;
     --grey-light: #ebebeb;
 }
 
@@ -28,4 +29,8 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+li {
+    list-style-type: none;
 }
