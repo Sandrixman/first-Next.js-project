@@ -20,7 +20,7 @@
 }
 
 .ghost {
-    border: 1px solid var(--grey-light);
+    border: 1px solid var(--gray-light);
 }
 
 .primary {
@@ -40,7 +40,7 @@
     font-weight: 700;
 }
 
-.grey {
+.gray {
     color: var(--white);
-    background: var(--grey);
+    background: var(--gray);
 }

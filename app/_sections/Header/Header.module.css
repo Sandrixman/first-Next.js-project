@@ -1,0 +1,16 @@
+.header {
+    grid-area: header;
+}
+
+.logo {
+    display: flex;
+    padding-left: 30px;
+    color: #7653fc;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: 200;
+}

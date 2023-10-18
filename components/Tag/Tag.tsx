@@ -22,7 +22,7 @@ export const Tag = ({
                 { [style.primary]: color === "primary" },
                 { [style.red]: color === "red" },
                 { [style.green]: color === "green" },
-                { [style.grey]: color === "grey" }
+                { [style.gray]: color === "gray" }
             )}
             {...props}
         >

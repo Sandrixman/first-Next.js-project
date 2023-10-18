@@ -1,10 +1,10 @@
+/** @type {import("next").NextConfig} */
 module.exports = {
-    webpack(config) {
+    webpack: (config) => {
         config.module.rules.push({
-            use: "@svgr/webpack",
             test: /\.svg$/i,
+            use: ["@svgr/webpack"],
         });
-
         return config;
     },
 };

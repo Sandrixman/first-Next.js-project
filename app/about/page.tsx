@@ -1,9 +1,4 @@
-import { Htag } from "../components";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "About",
-};
+import { Htag } from "../../components";
 
 export default function About(): JSX.Element {
     return (
