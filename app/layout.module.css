@@ -19,7 +19,7 @@
     }
 }
 
-.body {
+.main {
     grid-area: body;
     padding-right: 80px;
 }

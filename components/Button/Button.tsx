@@ -2,7 +2,7 @@
 import { ButtonProps } from "./Button.props";
 import style from "./Button.module.css";
 import cn from "classnames";
-import ArrowIcon from "../../public/arrow.svg";
+import ArrowIcon from "@/public/arrow.svg";
 import { useState } from "react";
 
 export const Button = ({
