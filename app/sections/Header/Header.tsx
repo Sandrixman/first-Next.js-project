@@ -1,15 +1,16 @@
+import Link from "next/link";
 import style from "./Header.module.css";
-import Logo from "../../../public/logo.svg";
+import Logo from "@/public/logo.svg";
 
 export const Header = () => {
     return (
         <header className={style.header}>
-            <a className={style.logo} href="./">
+            <Link href="/" className={style.logo}>
                 <Logo />
                 <div>
                     OWL<span>top</span>
                 </div>
-            </a>
+            </Link>
         </header>
     );
 };

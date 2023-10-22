@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { RatingProps } from "./Rating.props";
+import { v1 as uuid } from "uuid";
 import style from "./Rating.module.css";
 import cn from "classnames";
 import StarIcon from "@/public/star.svg";
@@ -64,8 +65,8 @@ export const Rating = ({
 
     return (
         <ul className={style.rating} {...props}>
-            {ratingArray.map((r, i) => (
-                <li key={i}>{r}</li>
+            {ratingArray.map((r) => (
+                <li key={uuid()}>{r}</li>
             ))}
         </ul>
     );

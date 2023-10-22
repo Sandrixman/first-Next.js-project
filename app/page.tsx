@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
 import { Button, Htag, P, Rating, Tag } from "@/components";
-import style from "./layout.module.css";
 
 export default function Home(): JSX.Element {
     const [rating, setRating] = useState(0);
 
     return (
-        <main className={style.main}>
+        <>
             <Htag tag="h1">Курси по Photoshop</Htag>
             <P>
                 Студенты освоят не только hard skills, необходимые для работы
@@ -34,6 +33,6 @@ export default function Home(): JSX.Element {
                 Читать отзывы
             </Button>
             <Rating rating={rating} setRating={setRating} isEditable />
-        </main>
+        </>
     );
 }

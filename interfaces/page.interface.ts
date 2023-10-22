@@ -20,6 +20,14 @@ export interface HhData {
 	updatedAt: Date;
 }
 
+export interface BlogData {
+	_id: string;
+	h1: string;
+	metaTitle: string;
+	metaDescription: string;
+	views: number;
+}
+
 export interface TopPageModel {
 	tags: string[];
 	_id: string;
@@ -36,6 +44,5 @@ export interface TopPageModel {
 	createdAt: Date;
 	updatedAt: Date;
 	hh?: HhData;
+	blog: BlogData;
 }
-
-

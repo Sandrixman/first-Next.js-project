@@ -23,13 +23,11 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
             </head>
-            <body>
-                <div className={style["grid-container"]}>
-                    <Header />
-                    <Sidebar />
-                    <Footer />
-                    {children}
-                </div>
+            <body className={style["grid-container"]}>
+                <Header />
+                <Sidebar />
+                <Footer />
+                <main className={style.main}>{children}</main>
             </body>
         </html>
     );

@@ -3,6 +3,7 @@
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint"],
     "rules": {
+        "react/jsx-key": "off",
         "semi": "off",
         "@typescript-eslint/semi": ["warn"],
         "@typescript-eslint/no-empty-interface": [

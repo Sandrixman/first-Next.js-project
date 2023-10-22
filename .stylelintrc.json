@@ -2,6 +2,12 @@
     "extends": ["stylelint-config-standard"],
     "plugins": ["stylelint-order"],
     "rules": {
-        "indentation": [4]
+        "indentation": [4],
+        "selector-class-pattern": [
+            "^[a-z][a-zA-Z]*$",
+            {
+                "message": "Class names should be in camelCase"
+            }
+        ]
     }
 }

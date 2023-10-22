@@ -1,0 +1,29 @@
+.menu {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--menu);
+}
+
+.menu.active {
+    color: var(--primary);
+}
+
+.menu.active svg {
+    fill: var(--primary);
+}
+
+.second {
+    color: var(--menu);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.third {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.third.active {
+    color: var(--primary);
+}
