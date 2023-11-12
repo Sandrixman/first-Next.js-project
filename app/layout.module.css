@@ -1,4 +1,4 @@
-.grid-container {
+.gridContainer {
     display: grid;
     min-height: 100vh;
     padding-top: 40px;
@@ -10,7 +10,7 @@
 }
 
 @media (width <= 768px) {
-    .grid-container {
+    .gridContainer {
         grid-template:
             "header" auto
             "body" 1fr

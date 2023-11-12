@@ -1,7 +1,7 @@
 import "./globals.css";
 import style from "./layout.module.css";
 import type { Metadata } from "next";
-import { Footer, Header, Sidebar } from "./sections";
+import { Footer, Header, Sidebar } from "./page-sections";
 
 export const metadata: Metadata = {
     title: "Next.js App",
@@ -15,15 +15,8 @@ export default function RootLayout({
 }): JSX.Element {
     return (
         <html lang="en">
-            <head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap"
-                    rel="stylesheet"
-                />
-            </head>
-            <body className={style["grid-container"]}>
+            <head></head>
+            <body className={style.gridContainer}>
                 <Header />
                 <Sidebar />
                 <Footer />

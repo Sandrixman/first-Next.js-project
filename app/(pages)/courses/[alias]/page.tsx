@@ -1,7 +1,9 @@
 import { getMenu } from "@/api/menu";
 import { getPage } from "@/api/page";
 import { getProduct } from "@/api/product";
+import { Htag, Tag } from "@/components";
 import { notFound } from "next/navigation";
+import style from "../../layout.module.css";
 
 export async function generateStaticParams() {
     const menu = await getMenu(0);
@@ -23,11 +25,12 @@ export default async function Course({
     const product = await getProduct(page.category);
 
     return (
-        <ul>
-            Product:
-            {product.map((course) => (
-                <li key={course._id}>{course.title}</li>
-            ))}
-        </ul>
+        <div className={style.mainTitle}>
+            <Htag tag="h1">{page.title}</Htag>
+            <Tag size="l" color="gray">
+                {product.length}
+            </Tag>
+            <span>Сортировка</span>
+        </div>
     );
 }

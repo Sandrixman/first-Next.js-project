@@ -1,29 +1,51 @@
-.menu {
+.opened {
+    display: none;
+}
+
+.firstLevel {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    margin: 20px 0;
+    gap: 20px;
+    align-items: center;
     font-size: 18px;
     font-weight: 500;
     color: var(--menu);
+    cursor: pointer;
 }
 
-.menu.active {
+.firstLevelActive,
+.firstLevel:hover {
     color: var(--primary);
 }
 
-.menu.active svg {
+.firstLevelActive svg,
+.firstLevel:hover svg {
     fill: var(--primary);
 }
 
-.second {
+.secondBlock {
+    border-left: 1px dashed #dfdfdf;
+    margin-left: 12px;
+    padding-left: 32px;
+}
+
+.secondLevel {
     color: var(--menu);
-    text-transform: uppercase;
+    margin: 10px 0;
     font-size: 12px;
     font-weight: 300;
+    text-transform: uppercase;
 }
 
-.third {
+.thirdLevel {
+    margin: 10px 0;
     font-size: 14px;
     font-weight: 500;
+    text-transform: capitalize;
 }
 
-.third.active {
+.thirdLevelActive,
+.thirdLevel:hover {
     color: var(--primary);
 }

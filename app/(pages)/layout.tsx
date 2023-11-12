@@ -9,10 +9,5 @@ export default function RootLayout({
 }: {
     children: React.ReactNode;
 }): JSX.Element {
-    return (
-        <>
-            Page layout
-            {children}
-        </>
-    );
+    return <>{children}</>;
 }
