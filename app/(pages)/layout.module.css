@@ -4,4 +4,16 @@
     align-items: center;
     justify-items: left;
     gap: 20px;
+    padding-bottom: 20px;
+}
+
+.coursesSection {
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.adventagesSection,
+.skillsSection {
+    margin-bottom: 50px;
 }

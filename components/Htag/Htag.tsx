@@ -1,15 +1,18 @@
 import { HtagProps } from "./Htag.props";
 import style from "./Htag.module.css";
+import cn from "classnames";
 
 export const Htag = ({ tag, children }: HtagProps): JSX.Element => {
-    switch (tag) {
-        case "h1":
-            return <h1 className={style.h1}>{children}</h1>;
-        case "h2":
-            return <h2 className={style.h2}>{children}</h2>;
-        case "h3":
-            return <h3 className={style.h3}>{children}</h3>;
-        default:
-            return <></>;
-    }
+    return (
+        <div
+            className={cn({
+                [style.h1]: tag === "h1",
+                [style.h2]: tag === "h2",
+                [style.h3]: tag === "h3",
+                [style.h4]: tag === "h4",
+            })}
+        >
+            {children}
+        </div>
+    );
 };
