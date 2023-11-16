@@ -4,7 +4,7 @@ import Link from "next/link";
 import cn from "classnames";
 import style from "./BuildMenu.module.css";
 
-async function BuildMenu() {
+export const BuildMenu = async () => {
     const firstCategory = 0;
     const menu = await getMenu(firstCategory);
 
@@ -70,6 +70,4 @@ async function BuildMenu() {
     };
 
     return <>{buildMenu()}</>;
-}
-
-export default BuildMenu;
+};

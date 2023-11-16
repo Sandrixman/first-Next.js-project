@@ -1,5 +1,5 @@
 import style from "./Sidebar.module.css";
-import BuildMenu from "@/app/components/BuildMenu/BuildMenu";
+import { BuildMenu } from "@/app/components";
 
 export async function Sidebar() {
     return (

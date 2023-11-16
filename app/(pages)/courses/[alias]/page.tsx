@@ -3,7 +3,12 @@ import { getPage } from "@/api/page";
 import { getProduct } from "@/api/product";
 import { Htag, Tag } from "@/components";
 import { notFound } from "next/navigation";
-import Vacancies from "@/app/components/Vacancies/Vacancies";
+import {
+    Vacancies,
+    Adventages,
+    Skills,
+    CoursesSection,
+} from "@/app/components";
 import style from "../../layout.module.css";
 
 export async function generateStaticParams() {
@@ -19,7 +24,6 @@ export default async function Course({
     params: { alias: string };
 }) {
     const page = await getPage(params.alias);
-    console.log(params.alias);
 
     if (!page) {
         notFound();
@@ -35,18 +39,10 @@ export default async function Course({
                 </Tag>
                 <span>Сортировка</span>
             </section>
-            <section className={style.coursesSection}>
-                {products.map((course) => (
-                    <Htag tag="h3">{course.title}</Htag>
-                ))}
-            </section>
+            <CoursesSection products={products} />
             <Vacancies {...page} />
-            <section className={style.adventagesSection}>
-                <Htag tag="h3">Преимущества</Htag>
-            </section>
-            <section className={style.skillsSection}>
-                <Htag tag="h3">Получаемые навыки</Htag>
-            </section>
+            <Adventages />
+            <Skills />
         </>
     );
 }
