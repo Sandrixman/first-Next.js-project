@@ -30,11 +30,8 @@ export default async function Course({
     // );
     try {
         const page = await getCourseByAlias(params.alias);
-        if (!page) {
-            notFound();
-        }
+
         const products = await getProducts(page.category);
-        console.log(page.category);
 
         // const setSort = (sort: SortEnum) => {
         //     dispatchSort({ type: sort });
@@ -55,8 +52,12 @@ export default async function Course({
                 <Skills {...page} />
             </>
         );
-    } catch (error) {
-        console.error("Error fetching data:", error);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {
+        if (error.response) {
+            console.log(error.response.data.error);
+            notFound();
+        }
         return <p>Something went wrong...</p>;
     }
 }

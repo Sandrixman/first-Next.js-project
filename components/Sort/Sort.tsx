@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { SortEnum, SortProps } from "./Sort.props";
 import SortIcon from "@/public/sort.svg";

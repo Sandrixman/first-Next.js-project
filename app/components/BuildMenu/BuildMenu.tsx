@@ -1,13 +1,21 @@
+"use client";
 import { firstLevelMenu } from "@/api/firstLevelMenu";
-import { PageData } from "@/interfaces/menu.interface";
+import { MenuItem, PageData } from "@/interfaces/menu.interface";
 import Link from "next/link";
 import cn from "classnames";
 import style from "./BuildMenu.module.css";
-import { getCourses } from "@/api/api";
+import { usePathname } from "next/navigation";
 
-export const BuildMenu = async () => {
+interface BuildMenuProps {
+    courses: MenuItem[];
+}
+
+export const BuildMenu: React.FC<BuildMenuProps> = ({ courses }) => {
+    const pathname = usePathname();
+    // needs to compare with the current menu item
+    const lastSegment = pathname.substring(pathname.lastIndexOf("/") + 1);
+
     const firstCategory = 1;
-    const courses = await getCourses();
     if (!courses) {
         console.log("No courses");
     }
@@ -58,7 +66,7 @@ export const BuildMenu = async () => {
                         key={thirdCategory._id}
                         className={cn(style.thirdLevel, {
                             [style.thirdLevelActive]:
-                                thirdCategory.alias === route,
+                                thirdCategory.alias === lastSegment,
                         })}
                     >
                         <Link href={`/${route}/${thirdCategory.alias}`}>
