@@ -1,17 +1,10 @@
-export enum TopLevelCategory {
-	Courses,
-	Services,
-	Books,
-	Products
-}
-
-export interface TopPageAdvantage {
+export interface AdvantageData {
 	_id: string;
 	title: string;
 	description: string;
 }
 
-export interface HhData {
+export interface SalaryData {
 	_id: string;
 	count: number;
 	juniorSalary: number;
@@ -20,10 +13,23 @@ export interface HhData {
 	updatedAt: Date;
 }
 
-export interface TopPageModel {
+export interface BlogData {
+	_id: string;
+	h1: string;
+	metaTitle: string;
+	metaDescription: string;
+	views: number;
+}
+
+export interface FaqData {
+	question: string;
+	answer: string;
+}
+
+export interface CourseModel {
 	tags: string[];
 	_id: string;
-	secondCategory: string;
+	firstCategory: string;
 	alias: string;
 	title: string;
 	category: string;
@@ -31,11 +37,9 @@ export interface TopPageModel {
 	tagsTitle: string;
 	metaTitle: string;
 	metaDescription: string;
-	firstCategory: TopLevelCategory;
-	advantages?: TopPageAdvantage[];
+	advantages?: AdvantageData[];
 	createdAt: Date;
 	updatedAt: Date;
-	hh?: HhData;
+	salary?: SalaryData;
+	faq?: FaqData[];
 }
-
-

@@ -1,7 +1,6 @@
-import { getMenu } from "@/api/menu";
-import { getPage } from "@/api/page";
-import { getProduct } from "@/api/product";
-import { Htag, Tag } from "@/components";
+// import { useReducer } from "react";
+import { getCourseByAlias, getCourses, getProducts } from "@/api/api";
+import { Htag, Sort, Tag } from "@/components";
 import { notFound } from "next/navigation";
 import {
     Vacancies,
@@ -10,12 +9,14 @@ import {
     CoursesSection,
 } from "@/app/components";
 import style from "../../layout.module.css";
+import { SortEnum } from "@/components/Sort/Sort.props";
+// import { SortReducer } from "@/components/Sort/sort.reducer";
 
 export async function generateStaticParams() {
-    const menu = await getMenu(0);
-    return menu.flatMap((item) =>
-        item.pages.map((el) => ({ alias: el.alias }))
-    );
+    const courses = await getCourses();
+    return courses.flatMap((item) => {
+        item.pages.map((el) => ({ alias: el.alias }));
+    });
 }
 
 export default async function Course({
@@ -23,26 +24,39 @@ export default async function Course({
 }: {
     params: { alias: string };
 }) {
-    const page = await getPage(params.alias);
+    // const [{ products: sortedProducts }, dispatchSort] = useReducer(
+    //     SortReducer,
+    //     { products, sort: SortEnum.rating }
+    // );
+    try {
+        const page = await getCourseByAlias(params.alias);
+        if (!page) {
+            notFound();
+        }
+        const products = await getProducts(page.category);
+        console.log(page.category);
 
-    if (!page) {
-        notFound();
+        // const setSort = (sort: SortEnum) => {
+        //     dispatchSort({ type: sort });
+        // };
+
+        return (
+            <>
+                <section className={style.mainTitle}>
+                    <Htag tag="h1">{page.title}</Htag>
+                    <Tag size="l" color="gray">
+                        {products.length}
+                    </Tag>
+                    <Sort sort={SortEnum.rating} />
+                </section>
+                <CoursesSection products={products} />
+                <Vacancies {...page} />
+                <Adventages {...page} />
+                <Skills {...page} />
+            </>
+        );
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return <p>Something went wrong...</p>;
     }
-    const products = await getProduct(page.category);
-
-    return (
-        <>
-            <section className={style.mainTitle}>
-                <Htag tag="h1">{page.title}</Htag>
-                <Tag size="l" color="gray">
-                    {products.length}
-                </Tag>
-                <span>Сортировка</span>
-            </section>
-            <CoursesSection products={products} />
-            <Vacancies {...page} />
-            <Adventages />
-            <Skills />
-        </>
-    );
 }

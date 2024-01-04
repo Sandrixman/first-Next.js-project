@@ -1,0 +1,50 @@
+.adventagesSection {
+    margin-bottom: 50px;
+}
+
+.adventages {
+    margin-bottom: 30px;
+}
+
+.adventagesTitle {
+    align-self: center;
+}
+
+.advantageItem {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 50px;
+    margin-bottom: 30px;
+}
+
+.advantageIcon {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--green-light);
+}
+
+.line {
+    width: 1px;
+    background: #d2d2d2;
+    justify-self: center;
+}
+
+.seoText {
+    padding: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+.seoText h2 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.seoText p {
+    font-size: 18px;
+    line-height: 29px;
+}

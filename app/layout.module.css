@@ -6,7 +6,7 @@
         ". header body ." auto
         ". sidebar body ." 1fr
         "footer footer footer footer" auto
-        / auto 230px minmax(320px, 1200px) auto;
+        / auto 280px minmax(320px, 1200px) auto;
 }
 
 @media (width <= 768px) {
@@ -22,4 +22,16 @@
 .main {
     grid-area: body;
     padding-right: 80px;
+}
+
+@media (width <= 768px) {
+    .main {
+        padding: 0 40px;
+    }
+}
+
+@media (width <= 576px) {
+    .main {
+        padding: 0 20px;
+    }
 }

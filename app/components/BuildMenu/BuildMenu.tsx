@@ -1,12 +1,16 @@
-import { firstLevelMenu, getMenu } from "@/api/menu";
-import { PageItem } from "@/interfaces/menu.interface";
+import { firstLevelMenu } from "@/api/firstLevelMenu";
+import { PageData } from "@/interfaces/menu.interface";
 import Link from "next/link";
 import cn from "classnames";
 import style from "./BuildMenu.module.css";
+import { getCourses } from "@/api/api";
 
 export const BuildMenu = async () => {
-    const firstCategory = 0;
-    const menu = await getMenu(firstCategory);
+    const firstCategory = 1;
+    const courses = await getCourses();
+    if (!courses) {
+        console.log("No courses");
+    }
 
     const buildMenu = () => {
         return (
@@ -30,12 +34,9 @@ export const BuildMenu = async () => {
     const buildSecondLevel = (route: string) => {
         return (
             <ul className={style.secondBlock}>
-                {menu.map((item) => (
-                    <li
-                        key={item._id.secondCategory}
-                        className={style.secondLevel}
-                    >
-                        {item._id.secondCategory}
+                {courses.map((item) => (
+                    <li key={item._id} className={style.secondLevel}>
+                        {item.firstCategory}
                         <div
                             className={cn({
                                 [style.opened]: item.isOpened,
@@ -49,7 +50,7 @@ export const BuildMenu = async () => {
         );
     };
 
-    const buildThirdLevel = (pages: PageItem[], route: string) => {
+    const buildThirdLevel = (pages: PageData[], route: string) => {
         return (
             <ul>
                 {pages.map((thirdCategory) => (

@@ -2,10 +2,10 @@ import { HtagProps } from "./Htag.props";
 import style from "./Htag.module.css";
 import cn from "classnames";
 
-export const Htag = ({ tag, children }: HtagProps): JSX.Element => {
+export const Htag = ({ tag, className, children }: HtagProps): JSX.Element => {
     return (
         <div
-            className={cn({
+            className={cn(className, {
                 [style.h1]: tag === "h1",
                 [style.h2]: tag === "h2",
                 [style.h3]: tag === "h3",

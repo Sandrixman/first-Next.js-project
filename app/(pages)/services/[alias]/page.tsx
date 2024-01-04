@@ -1,4 +1,4 @@
-import { getMenu } from "@/api/menu";
+import { getMenu } from "@/api/firstLevelMenu";
 import { getPage } from "@/api/page";
 import { getProduct } from "@/api/product";
 import { notFound } from "next/navigation";

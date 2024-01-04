@@ -8,9 +8,9 @@ export const CoursesSection = (props: CoursesSectionProps) => {
 
     return (
         <section className={style.coursesSection}>
-            {products.map((course) => (
-                <Htag key={course._id} tag="h3">
-                    {course.title}
+            {products.map((product) => (
+                <Htag key={product._id} tag="h3">
+                    {product.title}
                 </Htag>
             ))}
         </section>

@@ -1,50 +1,50 @@
 import React from "react";
 import RateIcon from "@/public/rate.svg";
-import { TopPageModel } from "@/interfaces/page.interface";
+import { CourseModel } from "@/interfaces/course.interface";
 import { Htag, Tag, Card } from "@/components";
 import style from "./Vacancies.module.css";
 
-export const Vacancies = ({ category, hh }: TopPageModel) => {
+export const Vacancies = ({ category, salary }: CourseModel) => {
     const price = (number: number) =>
         number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
     return (
-        hh && (
+        salary && (
             <section className={style.vacanciesSection}>
                 <div className={style.vacanciesTitle}>
-                    <Htag tag="h3">Вакансии - {category}</Htag>
+                    <Htag tag="h2">Вакансії - {category}</Htag>
                     <Tag color="red">mySite.ua</Tag>
                 </div>
                 <div className={style.vacanciesData}>
                     <Card className={style.vacanciesCount}>
-                        <Htag tag="h4">Всего вакансий</Htag>
+                        <Htag tag="h4">Всього вакансій</Htag>
                         <div className={style.vacanciesCountValue}>
-                            {hh?.count}
+                            {salary?.count}
                         </div>
                     </Card>
                     <Card className={style.vacanciesSalary}>
                         <div className={style.vacanciesSalaryItem}>
-                            <Htag tag="h4">Начальный</Htag>
+                            <Htag tag="h4">Початковий</Htag>
                             <div className={style.vacanciesSalaryValue}>
-                                {price(hh.juniorSalary)}
+                                {price(salary.juniorSalary)}
                             </div>
                             <RateIcon className={style.filled} />
                             <RateIcon />
                             <RateIcon />
                         </div>
                         <div className={style.vacanciesSalaryItem}>
-                            <Htag tag="h4">Средний</Htag>
+                            <Htag tag="h4">Средній</Htag>
                             <div className={style.vacanciesSalaryValue}>
-                                {price(hh.middleSalary)}
+                                {price(salary.middleSalary)}
                             </div>
                             <RateIcon className={style.filled} />
                             <RateIcon className={style.filled} />
                             <RateIcon />
                         </div>
                         <div className={style.vacanciesSalaryItem}>
-                            <Htag tag="h4">Профессионал</Htag>
+                            <Htag tag="h4">Професіонал</Htag>
                             <div className={style.vacanciesSalaryValue}>
-                                {price(hh.seniorSalary)}
+                                {price(salary.seniorSalary)}
                             </div>
                             <RateIcon className={style.filled} />
                             <RateIcon className={style.filled} />
