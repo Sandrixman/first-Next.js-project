@@ -2,6 +2,7 @@
     "name": "first-next-project",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://sandrixman.github.io/first-Next.js-project/",
     "scripts": {
         "dev": "next dev",
         "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
