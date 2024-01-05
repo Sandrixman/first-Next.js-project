@@ -1,8 +1,11 @@
+export interface MenuMap {
+	[key: string]: MenuItem[];
+}
 export interface PageData {
-		_id: string;
-		alias: string;
-		title: string;
-		category: string;
+	_id: string;
+	alias: string;
+	title: string;
+	category: string;
 }
 
 export interface MenuItem {

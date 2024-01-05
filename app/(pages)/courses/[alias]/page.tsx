@@ -2,21 +2,20 @@
 import { getCourseByAlias, getCourses, getProducts } from "@/api/api";
 import { Htag, Sort, Tag } from "@/components";
 import { notFound } from "next/navigation";
-import {
-    Vacancies,
-    Adventages,
-    Skills,
-    CoursesSection,
-} from "@/app/components";
+import { Vacancies, Adventages, Skills, MainInfo } from "@/app/main-components";
 import style from "../../layout.module.css";
 import { SortEnum } from "@/components/Sort/Sort.props";
 // import { SortReducer } from "@/components/Sort/sort.reducer";
 
 export async function generateStaticParams() {
-    const courses = await getCourses();
-    return courses.flatMap((item) => {
-        item.pages.map((el) => ({ alias: el.alias }));
-    });
+    try {
+        const courses = await getCourses();
+        return courses.flatMap((item) => {
+            item.pages.map((el) => ({ alias: el.alias }));
+        });
+    } catch {
+        notFound();
+    }
 }
 
 export default async function Course({
@@ -46,7 +45,7 @@ export default async function Course({
                     </Tag>
                     <Sort sort={SortEnum.rating} />
                 </section>
-                <CoursesSection products={products} />
+                <MainInfo products={products} />
                 <Vacancies {...page} />
                 <Adventages {...page} />
                 <Skills {...page} />

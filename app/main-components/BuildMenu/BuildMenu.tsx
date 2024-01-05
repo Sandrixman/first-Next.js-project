@@ -1,24 +1,41 @@
 "use client";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { firstLevelMenu } from "@/api/firstLevelMenu";
-import { MenuItem, PageData } from "@/interfaces/menu.interface";
+import { MenuItem, PageData, MenuMap } from "@/interfaces/menu.interface";
 import Link from "next/link";
 import cn from "classnames";
 import style from "./BuildMenu.module.css";
-import { usePathname } from "next/navigation";
 
 interface BuildMenuProps {
     courses: MenuItem[];
+    services: MenuItem[];
 }
 
-export const BuildMenu: React.FC<BuildMenuProps> = ({ courses }) => {
+export const BuildMenu: React.FC<BuildMenuProps> = ({ courses, services }) => {
+    const [firstCategory, setFirstCategory] = useState(0);
     const pathname = usePathname();
     // needs to compare with the current menu item
     const lastSegment = pathname.substring(pathname.lastIndexOf("/") + 1);
 
-    const firstCategory = 1;
-    if (!courses) {
-        console.log("No courses");
-    }
+    // to display menu items that depend on the selected route
+    const menuMap: MenuMap = {
+        courses,
+        services,
+    };
+
+    const onOpenMenu = (id: number) => {
+        if (id === firstCategory) {
+            setFirstCategory(0);
+        } else {
+            setFirstCategory(id);
+        }
+    };
+
+    // prevents activation onOpenMenu inside the menu
+    const onInsideMenuItem = (event: React.MouseEvent) => {
+        event.stopPropagation();
+    };
 
     const buildMenu = () => {
         return (
@@ -26,6 +43,7 @@ export const BuildMenu: React.FC<BuildMenuProps> = ({ courses }) => {
                 {firstLevelMenu.map(({ route, name, icon, id }) => (
                     <li
                         key={route}
+                        onClick={() => onOpenMenu(id)}
                         className={cn(style.firstLevel, {
                             [style.firstLevelActive]: id === firstCategory,
                         })}
@@ -40,10 +58,16 @@ export const BuildMenu: React.FC<BuildMenuProps> = ({ courses }) => {
     };
 
     const buildSecondLevel = (route: string) => {
+        const currentMenu = menuMap[route] || [];
+
         return (
             <ul className={style.secondBlock}>
-                {courses.map((item) => (
-                    <li key={item._id} className={style.secondLevel}>
+                {currentMenu.map((item) => (
+                    <li
+                        key={item._id}
+                        onClick={(e) => onInsideMenuItem(e)}
+                        className={style.secondLevel}
+                    >
                         {item.firstCategory}
                         <div
                             className={cn({

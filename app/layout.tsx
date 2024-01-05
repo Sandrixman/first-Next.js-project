@@ -1,7 +1,7 @@
 import "./globals.css";
 import style from "./layout.module.css";
 import type { Metadata } from "next";
-import { Footer, Header, Sidebar } from "./page-sections";
+import { Footer, Header, Sidebar } from "./main-sections";
 
 export const metadata: Metadata = {
     title: "Next.js App",
