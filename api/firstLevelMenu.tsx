@@ -4,7 +4,7 @@ import ServicesIcon from "@/public/cloud.svg";
 import BooksIcon from "@/public/book.svg";
 import ProductsIcon from "@/public/box.svg";
 
-export const firstLevelMenu: FirstLevelMenuItem[] = [
+export const mainMenu: FirstLevelMenuItem[] = [
     {
         route: "courses",
         name: "Курси",
