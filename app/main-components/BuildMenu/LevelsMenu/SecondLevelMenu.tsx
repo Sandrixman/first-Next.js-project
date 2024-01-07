@@ -19,13 +19,15 @@ export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
 }) => {
     const [openThirdLevel, setOpenThirdLevel] = useState<string | null>(null);
 
-    const onToggleThirdLevelMenu = (category: string): void => {
-        setOpenThirdLevel(openThirdLevel === category ? null : category);
+    const onToggleThirdLevelMenu = (): void => {
+        setOpenThirdLevel((prevCategory) =>
+            prevCategory === firstCategory ? null : firstCategory
+        );
     };
 
     return (
         <li key={id} className={style.secondLevel}>
-            <div onClick={() => onToggleThirdLevelMenu(firstCategory)}>{firstCategory}</div>
+            <div onClick={onToggleThirdLevelMenu}>{firstCategory}</div>
             {openThirdLevel === firstCategory && buildThirdLevelMenu(pages, route)}
         </li>
     );

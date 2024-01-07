@@ -18,28 +18,26 @@ export const FirstLevelMenu: React.FC<FirstLevelMenuProps> = ({
     id,
     buildSecondLevelMenu,
 }) => {
-    const [openSecondLevel, setOpenSecondLevel] = useState(0);
+    const [openSecondLevel, setOpenSecondLevel] = useState<number | null>(null);
 
-    const onToggleSecondLevelMenu = (id: number): void => {
+    const onToggleSecondLevelMenu = (): void => {
         // makes possible to open and close the menu
-        setOpenSecondLevel((prevId) => (prevId === id ? 0 : id));
+        setOpenSecondLevel((prevId) => (prevId === id ? null : id));
     };
 
     // opens menu only if clicking on Htag or icon
-    const isClickOnHtagOrIcon = (target: HTMLElement, id: number): void => {
-        const isClickableElement = ["DIV", "path", "svg"].includes(target.tagName);
-        if (isClickableElement) {
-            onToggleSecondLevelMenu(id);
+    const isClickOnHtagOrIcon = (e: React.MouseEvent): void => {
+        const target = e.target as HTMLElement;
+
+        if (["DIV", "path", "svg"].includes(target.tagName)) {
+            onToggleSecondLevelMenu();
         }
     };
 
     return (
         <li key={route}>
             <span
-                onClick={(e) => {
-                    const target = e.target as HTMLElement;
-                    isClickOnHtagOrIcon(target, id);
-                }}
+                onClick={(e) => isClickOnHtagOrIcon(e)}
                 className={cn(style.firstLevel, {
                     [style.activeMenu]: id === openSecondLevel,
                 })}

@@ -1,11 +1,6 @@
-// import { useReducer } from "react";
 import { getCourseByAlias, getCourses, getProducts } from "@/api/api";
-import { Htag, Sort, Tag } from "@/components";
 import { notFound } from "next/navigation";
 import { Vacancies, Adventages, Skills, MainInfo } from "@/app/main-components";
-import style from "../../layout.module.css";
-import { SortEnum } from "@/components/Sort/Sort.props";
-// import { SortReducer } from "@/components/Sort/sort.reducer";
 
 export async function generateStaticParams() {
     try {
@@ -18,37 +13,18 @@ export async function generateStaticParams() {
     }
 }
 
-export default async function Course({
-    params,
-}: {
-    params: { alias: string };
-}) {
-    // const [{ products: sortedProducts }, dispatchSort] = useReducer(
-    //     SortReducer,
-    //     { products, sort: SortEnum.rating }
-    // );
+export default async function Course({ params }: { params: { alias: string } }) {
     try {
-        const page = await getCourseByAlias(params.alias);
+        const course = await getCourseByAlias(params.alias);
 
-        const products = await getProducts(page.category);
-
-        // const setSort = (sort: SortEnum) => {
-        //     dispatchSort({ type: sort });
-        // };
+        const products = await getProducts(course.category);
 
         return (
             <>
-                <section className={style.mainTitle}>
-                    <Htag tag="h1">{page.title}</Htag>
-                    <Tag size="l" color="gray">
-                        {products.length}
-                    </Tag>
-                    <Sort sort={SortEnum.rating} />
-                </section>
-                <MainInfo products={products} />
-                <Vacancies {...page} />
-                <Adventages {...page} />
-                <Skills {...page} />
+                <MainInfo course={course} products={products} />
+                <Vacancies {...course} />
+                <Adventages {...course} />
+                <Skills {...course} />
             </>
         );
         // eslint-disable-next-line @typescript-eslint/no-explicit-any

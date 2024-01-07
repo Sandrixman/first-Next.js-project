@@ -23,6 +23,7 @@ export const BuildMenu: React.FC<BuildMenuProps> = ({ courses, services }) => {
             <ul>
                 {mainMenu.map(({ route, name, icon, id }) => (
                     <FirstLevelMenu
+                        key={route}
                         route={route}
                         name={name}
                         icon={icon}
@@ -35,12 +36,13 @@ export const BuildMenu: React.FC<BuildMenuProps> = ({ courses, services }) => {
     };
 
     const buildSecondLevelMenu = (route: string) => {
-        const currentMenu = menuMap[route] || [];
+        const currentMenu = menuMap[route];
 
         return (
             <ul className={style.secondLevelBlock}>
                 {currentMenu.map((item) => (
                     <SecondLevelMenu
+                        key={item._id}
                         route={route}
                         id={item._id}
                         firstCategory={item.firstCategory}
@@ -55,12 +57,13 @@ export const BuildMenu: React.FC<BuildMenuProps> = ({ courses, services }) => {
     const buildThirdLevelMenu = (pages: PageData[], route: string) => {
         return (
             <ul>
-                {pages.map((thirdCategory) => (
+                {pages.map(({ _id, alias, category }) => (
                     <ThirdLevelMenu
-                        id={thirdCategory._id}
-                        alias={thirdCategory.alias}
+                        key={_id}
+                        id={_id}
+                        alias={alias}
                         route={route}
-                        category={thirdCategory.category}
+                        category={category}
                     />
                 ))}
             </ul>
