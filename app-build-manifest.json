@@ -1,58 +1,58 @@
 {
   "pages": {
     "/_not-found": [
-      "static/chunks/webpack-69996038d6006065.js",
-      "static/chunks/fd9d1056-e22bf0dadd3b7f72.js",
-      "static/chunks/938-4f28bd554544b82b.js",
+      "static/chunks/webpack-6e571fb8d742de63.js",
+      "static/chunks/fd9d1056-0cba22538e7456c1.js",
+      "static/chunks/938-d34d00739ac0b555.js",
       "static/chunks/main-app-970c43df31bc4cd6.js",
-      "static/chunks/app/_not-found-42c8099489ef4b09.js"
+      "static/chunks/app/_not-found-8994148ffec63b02.js"
     ],
     "/layout": [
-      "static/chunks/webpack-69996038d6006065.js",
-      "static/chunks/fd9d1056-e22bf0dadd3b7f72.js",
-      "static/chunks/938-4f28bd554544b82b.js",
+      "static/chunks/webpack-6e571fb8d742de63.js",
+      "static/chunks/fd9d1056-0cba22538e7456c1.js",
+      "static/chunks/938-d34d00739ac0b555.js",
       "static/chunks/main-app-970c43df31bc4cd6.js",
-      "static/chunks/752-94c6412ba7c1c478.js",
-      "static/chunks/242-a89111e2430c44a4.js",
-      "static/css/b641555a5b338964.css",
-      "static/chunks/app/layout-cb9d5f4d5452bed2.js"
+      "static/chunks/752-c6164092751dee86.js",
+      "static/chunks/411-5dac6d9aeb180b14.js",
+      "static/css/f3833e87687a9440.css",
+      "static/chunks/app/layout-10b920b3893270bd.js"
     ],
     "/page": [
-      "static/chunks/webpack-69996038d6006065.js",
-      "static/chunks/fd9d1056-e22bf0dadd3b7f72.js",
-      "static/chunks/938-4f28bd554544b82b.js",
+      "static/chunks/webpack-6e571fb8d742de63.js",
+      "static/chunks/fd9d1056-0cba22538e7456c1.js",
+      "static/chunks/938-d34d00739ac0b555.js",
       "static/chunks/main-app-970c43df31bc4cd6.js",
-      "static/css/530bf3de77dfc489.css",
-      "static/chunks/app/page-332c9935789db595.js"
+      "static/css/748f9f17901056fa.css",
+      "static/chunks/app/page-bdd2b96a01aab93f.js"
     ],
     "/(pages)/layout": [
-      "static/chunks/webpack-69996038d6006065.js",
-      "static/chunks/fd9d1056-e22bf0dadd3b7f72.js",
-      "static/chunks/938-4f28bd554544b82b.js",
+      "static/chunks/webpack-6e571fb8d742de63.js",
+      "static/chunks/fd9d1056-0cba22538e7456c1.js",
+      "static/chunks/938-d34d00739ac0b555.js",
       "static/chunks/main-app-970c43df31bc4cd6.js",
       "static/chunks/app/(pages)/layout-ce49a960fc36a7cc.js"
     ],
     "/(pages)/courses/[alias]/page": [
-      "static/chunks/webpack-69996038d6006065.js",
-      "static/chunks/fd9d1056-e22bf0dadd3b7f72.js",
-      "static/chunks/938-4f28bd554544b82b.js",
+      "static/chunks/webpack-6e571fb8d742de63.js",
+      "static/chunks/fd9d1056-0cba22538e7456c1.js",
+      "static/chunks/938-d34d00739ac0b555.js",
       "static/chunks/main-app-970c43df31bc4cd6.js",
-      "static/chunks/752-94c6412ba7c1c478.js",
-      "static/chunks/242-a89111e2430c44a4.js",
-      "static/css/2faad8bbeff0f331.css",
-      "static/chunks/app/(pages)/courses/[alias]/page-a9d6b0b2d2a26168.js"
+      "static/chunks/752-c6164092751dee86.js",
+      "static/chunks/411-5dac6d9aeb180b14.js",
+      "static/css/00e3b535c43c19c4.css",
+      "static/chunks/app/(pages)/courses/[alias]/page-9a6e3a00eeff6469.js"
     ],
     "/(pages)/courses/[alias]/error": [
-      "static/chunks/webpack-69996038d6006065.js",
-      "static/chunks/fd9d1056-e22bf0dadd3b7f72.js",
-      "static/chunks/938-4f28bd554544b82b.js",
+      "static/chunks/webpack-6e571fb8d742de63.js",
+      "static/chunks/fd9d1056-0cba22538e7456c1.js",
+      "static/chunks/938-d34d00739ac0b555.js",
       "static/chunks/main-app-970c43df31bc4cd6.js",
-      "static/chunks/app/(pages)/courses/[alias]/error-85cf061daa21151c.js"
+      "static/chunks/app/(pages)/courses/[alias]/error-b7770c855b9dc411.js"
     ],
     "/(pages)/courses/[alias]/loading": [
-      "static/chunks/webpack-69996038d6006065.js",
-      "static/chunks/fd9d1056-e22bf0dadd3b7f72.js",
-      "static/chunks/938-4f28bd554544b82b.js",
+      "static/chunks/webpack-6e571fb8d742de63.js",
+      "static/chunks/fd9d1056-0cba22538e7456c1.js",
+      "static/chunks/938-d34d00739ac0b555.js",
       "static/chunks/main-app-970c43df31bc4cd6.js",
       "static/chunks/app/(pages)/courses/[alias]/loading-d11e75eb98a57485.js"
     ]
