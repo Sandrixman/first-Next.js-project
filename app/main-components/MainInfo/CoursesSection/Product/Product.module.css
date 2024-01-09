@@ -1,0 +1,203 @@
+.product {
+    display: grid;
+    grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] auto [end];
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 30px;
+    background: var(--white);
+}
+
+.logo {
+    grid-column: start / logoend;
+    border-radius: 5px;
+}
+
+.titleContainer {
+    grid-column: titlestart / middle;
+}
+
+.title {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.titleIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #dcb44e;
+    border-radius: 5px;
+}
+
+.priceConteiner {
+    grid-column: pricestart / priceend;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.credit {
+    grid-column: creditstart / creditend;
+}
+
+.rating {
+    grid-column: ratingstart / end;
+}
+
+.hr,
+.hr2 {
+    grid-column: start / end;
+    width: 100%;
+    height: 1px;
+    border: none;
+    margin: 20px 0;
+    background: var(--gray-light);
+}
+
+.description {
+    grid-column: start / end;
+    margin-bottom: 12px;
+}
+
+.features {
+    grid-column: start / middle;
+    margin-right: 60px;
+}
+
+.characteristics {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.characteristicDots {
+    border-bottom: 1px dashed var(--gray-light);
+}
+
+.adventages {
+    grid-column: middle / end;
+    border-left: 2px solid var(--green);
+    padding-left: 15px;
+    align-self: start;
+}
+
+.actions {
+    grid-column: start / end;
+    display: flex;
+    gap: 20px;
+}
+
+@media (width <= 1340px) {
+    .product {
+        grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
+        grid-template-areas:
+            "logo . titleContainer titleContainer titleContainer titleContainer titleContainer"
+            "priceConteiner priceConteiner priceConteiner . credit . rating"
+            "hr hr hr hr hr hr hr"
+            "description description description description description description description"
+            "features features features features features features features"
+            "adventages adventages adventages adventages adventages adventages adventages"
+            "hr2 hr2 hr2 hr2 hr2 hr2 hr2"
+            "actions actions actions actions actions actions actions";
+    }
+
+    .logo {
+        grid-area: logo;
+        margin-bottom: 20px;
+    }
+
+    .titleContainer {
+        grid-area: titleContainer;
+        margin-bottom: 20px;
+    }
+
+    .priceConteiner {
+        grid-area: priceConteiner;
+    }
+
+    .credit {
+        grid-area: credit;
+    }
+
+    .rating {
+        grid-area: rating;
+    }
+
+    .hr {
+        grid-area: hr;
+    }
+
+    .description {
+        grid-area: description;
+        margin-bottom: 20px;
+    }
+
+    .features {
+        grid-area: features;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+
+    .adventages {
+        grid-area: adventages;
+        margin-bottom: 20px;
+    }
+
+    .actions {
+        grid-area: actions;
+    }
+}
+
+@media (width <= 640px) {
+    .product {
+        grid-template-columns: 70px 30px auto 1fr;
+        grid-template-areas:
+            "logo . titleContainer titleContainer"
+            "priceConteiner priceConteiner priceConteiner credit"
+            "rating rating rating rating"
+            "hr hr hr hr"
+            "description description description description"
+            "features features features features"
+            "adventages adventages adventages adventages"
+            "hr2 hr2 hr2 hr2"
+            "actions actions actions actions";
+    }
+
+    .priceConteiner {
+        margin-bottom: 20px;
+        margin-right: 40px;
+    }
+
+    .credit {
+        margin-bottom: 20px;
+    }
+}
+
+@media (width <= 480px) {
+    .product {
+        grid-template-columns: 70px 30px 1fr;
+        grid-template-areas:
+            "logo . titleContainer"
+            "priceConteiner priceConteiner priceConteiner"
+            "credit credit credit"
+            "rating rating rating"
+            "hr hr hr"
+            "description description description"
+            "features features features"
+            "adventages adventages adventages"
+            "hr2 hr2 hr2"
+            "actions actions actions";
+    }
+
+    .tags {
+        display: none;
+    }
+}

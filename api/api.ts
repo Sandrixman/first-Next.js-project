@@ -3,7 +3,7 @@ import { MenuItem } from '@/interfaces/menu.interface';
 import { CourseModel } from '@/interfaces/course.interface';
 import { ProductModel } from '@/interfaces/product.interface';
 
-const baseURL = 'https://nodejs-homework-rest-api-7or0.onrender.com';
+export const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function getCourses(): Promise<MenuItem[]> {
     const {data} = await axios.get(`${baseURL}/courses`);

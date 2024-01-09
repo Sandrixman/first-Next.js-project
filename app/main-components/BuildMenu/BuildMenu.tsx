@@ -5,7 +5,6 @@ import { FirstLevelMenu } from "./LevelsMenu/FirstLevelMenu";
 import { SecondLevelMenu } from "./LevelsMenu/SecondLevelMenu";
 import { ThirdLevelMenu } from "./LevelsMenu/ThirdLevelMenu";
 import style from "./BuildMenu.module.css";
-
 interface BuildMenuProps {
     courses: MenuItem[];
     services: MenuItem[];
@@ -20,18 +19,20 @@ export const BuildMenu: React.FC<BuildMenuProps> = ({ courses, services }) => {
 
     const buildFirstLevelMenu = () => {
         return (
-            <ul>
-                {mainMenu.map(({ route, name, icon, id }) => (
-                    <FirstLevelMenu
-                        key={route}
-                        route={route}
-                        name={name}
-                        icon={icon}
-                        id={id}
-                        buildSecondLevelMenu={buildSecondLevelMenu}
-                    />
-                ))}
-            </ul>
+            <>
+                <ul>
+                    {mainMenu.map(({ route, name, icon, id }) => (
+                        <FirstLevelMenu
+                            key={route}
+                            route={route}
+                            name={name}
+                            icon={icon}
+                            id={id}
+                            buildSecondLevelMenu={buildSecondLevelMenu}
+                        />
+                    ))}
+                </ul>
+            </>
         );
     };
 

@@ -11,7 +11,6 @@ interface SecondLevelMenuProps {
 }
 
 export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
-    id,
     route,
     firstCategory,
     pages,
@@ -26,7 +25,7 @@ export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
     };
 
     return (
-        <li key={id} className={style.secondLevel}>
+        <li className={style.secondLevel}>
             <div onClick={onToggleThirdLevelMenu}>{firstCategory}</div>
             {openThirdLevel === firstCategory && buildThirdLevelMenu(pages, route)}
         </li>

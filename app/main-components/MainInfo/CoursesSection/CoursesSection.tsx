@@ -1,6 +1,5 @@
-import React from "react";
-import { Htag } from "@/components";
 import { ProductModel } from "@/interfaces/product.interface";
+import { Product } from "./Product/Product";
 import style from "./CoursesSection.module.css";
 
 interface CoursesProps {
@@ -10,10 +9,8 @@ interface CoursesProps {
 export const CoursesSection = ({ products }: CoursesProps) => {
     return (
         <section className={style.coursesSection}>
-            {products.map(({ _id, title }) => (
-                <Htag key={_id} tag="h3">
-                    {title}
-                </Htag>
+            {products.map(({ ...props }) => (
+                <Product key={props._id} {...props} />
             ))}
         </section>
     );

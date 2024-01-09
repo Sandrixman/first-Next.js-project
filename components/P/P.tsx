@@ -5,6 +5,7 @@ import cn from "classnames";
 
 export const P = ({
     size = "m",
+    weight = "normal",
     children,
     className,
     ...props
@@ -15,7 +16,8 @@ export const P = ({
                 className,
                 { [style.s]: size === "s" },
                 { [style.m]: size === "m" },
-                { [style.l]: size === "l" }
+                { [style.l]: size === "l" },
+                { [style.bold]: weight === "bold" }
             )}
             {...props}
         >

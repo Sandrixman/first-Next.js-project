@@ -12,3 +12,18 @@
     font-size: 18px;
     line-height: 29px;
 }
+
+.normal {
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+@media (width <= 480px) {
+    .m {
+        font-size: 12px;
+        line-height: 20px;
+    }
+}

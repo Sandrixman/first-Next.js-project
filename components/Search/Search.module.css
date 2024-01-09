@@ -1,0 +1,24 @@
+.search {
+    position: relative;
+    height: 36px;
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 5%);
+}
+
+.searchInput {
+    width: 100%;
+}
+
+.searchIcon {
+    width: 100%;
+}
+
+.searchButton {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+}

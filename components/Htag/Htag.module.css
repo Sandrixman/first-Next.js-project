@@ -16,5 +16,15 @@
 
 .h4 {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
+}
+
+@media (width <= 480px) {
+    .h3 {
+        font-size: 16px;
+    }
+
+    .h4 {
+        font-size: 16px;
+    }
 }

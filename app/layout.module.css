@@ -9,29 +9,27 @@
         / auto 280px minmax(320px, 1200px) auto;
 }
 
-@media (width <= 768px) {
-    .gridContainer {
-        grid-template:
-            "header" auto
-            "body" 1fr
-            "footer" auto
-            / 1fr;
-    }
-}
-
 .main {
     grid-area: body;
     padding-right: 80px;
     min-height: 100vh;
 }
 
-@media (width <= 768px) {
+@media (width <= 960px) {
+    .gridContainer {
+        grid-template:
+            "header hamburger" auto
+            "body body" 1fr
+            "footer footer" auto
+            / 1fr auto;
+    }
+
     .main {
         padding: 0 40px;
     }
 }
 
-@media (width <= 576px) {
+@media (width <= 640px) {
     .main {
         padding: 0 20px;
     }

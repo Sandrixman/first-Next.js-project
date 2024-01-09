@@ -2,18 +2,10 @@ import React from "react";
 import RateIcon from "@/public/rate.svg";
 import { CourseModel } from "@/interfaces/course.interface";
 import { Htag, Tag, Card } from "@/components";
+import { priceUA } from "@/helpers/priceUA";
 import style from "./Vacancies.module.css";
 
 export const Vacancies = ({ category, salary }: CourseModel) => {
-    // price transformer
-    const priceUA = (number: number) => {
-        const numberUah = Math.floor(number / 5);
-        return numberUah
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-            .concat(" ₴");
-    };
-
     return (
         salary && (
             <section className={style.vacanciesSection}>

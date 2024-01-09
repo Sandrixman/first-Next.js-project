@@ -4,7 +4,7 @@
 
 .logo {
     display: flex;
-    padding-left: 30px;
+    padding: 0 40px;
     color: #7653fc;
     font-size: 30px;
     font-weight: 700;
@@ -13,4 +13,10 @@
 .logo span {
     font-size: 24px;
     font-weight: 200;
+}
+
+@media (width <= 640px) {
+    .logo {
+        padding: 0 20px;
+    }
 }

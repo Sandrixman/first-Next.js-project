@@ -6,3 +6,9 @@
     gap: 20px;
     padding-bottom: 20px;
 }
+
+@media (width <= 640px) {
+    .mainTitle {
+        grid-template-columns: auto 1fr;
+    }
+}

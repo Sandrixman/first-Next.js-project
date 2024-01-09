@@ -12,9 +12,7 @@ export const Rating = ({
     setRating,
     ...props
 }: RatingProps): JSX.Element => {
-    const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
-        new Array(5).fill(<></>)
-    );
+    const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
     useEffect(() => {
         constructRating(rating);

@@ -46,3 +46,11 @@
     transform: rotate(90deg);
     transition: all 0.3s;
 }
+
+@media (width <= 480px) {
+    .button {
+        width: 110px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
