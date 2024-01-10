@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Button, Htag, Input, P, Rating, Tag, Textarea } from "@/components";
+import { Htag, P, Rating, Tag } from "@/components";
 
 export default function Home(): JSX.Element {
     const [rating, setRating] = useState(0);
@@ -27,13 +27,7 @@ export default function Home(): JSX.Element {
             <Tag size="s" color="green">
                 -10 000 ₽
             </Tag>
-            <Button>Узнать подробнее</Button>
-            <Button appearance="ghost" arrow="add">
-                Читать отзывы
-            </Button>
             <Rating rating={rating} setRating={setRating} isEditable />
-            <Input placeholder="test" />
-            <Textarea placeholder="test" />
         </>
     );
 }

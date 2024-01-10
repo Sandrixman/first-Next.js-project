@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratingstart] auto [end];
     align-items: center;
-    margin-bottom: 20px;
     padding: 30px;
+    margin-bottom: 30px;
     background: var(--white);
 }
 
@@ -93,6 +93,20 @@
     grid-column: start / end;
     display: flex;
     gap: 20px;
+}
+
+.closed {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+}
+
+.opened {
+    overflow: auto;
+    max-height: auto;
+    padding: 30px;
+    margin-top: -40px;
+    margin-bottom: 30px;
 }
 
 @media (width <= 1340px) {

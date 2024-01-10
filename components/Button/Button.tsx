@@ -1,23 +1,16 @@
-"use client";
 import { ButtonProps } from "./Button.props";
 import style from "./Button.module.css";
 import cn from "classnames";
 import ArrowIcon from "@/public/arrow.svg";
-import { useState } from "react";
 
 export const Button = ({
     appearance = "primary",
     arrow = "none",
+    onOpen,
     children,
     className,
     ...props
 }: ButtonProps): JSX.Element => {
-    const [open, setOpen] = useState(false);
-
-    const onOpen = () => {
-        setOpen(!open);
-    };
-
     return (
         <button
             onClick={onOpen}
@@ -31,8 +24,8 @@ export const Button = ({
             {arrow !== "none" && (
                 <span
                     className={cn(style.arrow, {
-                        [style.down]: !open,
-                        [style.right]: open,
+                        [style.down]: arrow === "down",
+                        [style.right]: arrow === "right",
                     })}
                 >
                     <ArrowIcon />

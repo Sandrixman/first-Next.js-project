@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap");
 
 :root {
     --black: #3b434e;
@@ -12,6 +12,7 @@
     --gray: #b3c0d9;
     --gray-light: #ebebeb;
     --menu: #787d85;
+    --bg-review: #f9f8ff;
 }
 
 * {

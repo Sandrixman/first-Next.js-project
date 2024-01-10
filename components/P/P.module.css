@@ -22,6 +22,11 @@
 }
 
 @media (width <= 480px) {
+    .s {
+        font-size: 10px;
+        line-height: 18px;
+    }
+
     .m {
         font-size: 12px;
         line-height: 20px;

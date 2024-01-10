@@ -1,0 +1,39 @@
+.productReview {
+    display: grid;
+    grid-template-columns: [start] auto 1fr auto auto [end];
+    align-items: center;
+    gap: 20px;
+}
+
+.name,
+.subTitle {
+    display: inline;
+    margin-right: 10px;
+}
+
+.description {
+    grid-column: start / end;
+}
+
+.hr {
+    grid-column: start / end;
+    width: 100%;
+    height: 1px;
+    border: none;
+    margin: 20px 0;
+    background: var(--gray-light);
+}
+
+@media (width <= 640px) {
+    .productReview {
+        grid-template-columns: [start] 30px [titlestart] auto [dateend] 1fr [end];
+    }
+
+    .title {
+        grid-column: titlestart/end;
+    }
+
+    .date {
+        grid-column: start/dateend;
+    }
+}

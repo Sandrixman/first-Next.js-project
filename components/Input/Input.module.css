@@ -1,4 +1,6 @@
 .input {
+    min-width: 140px;
+    height: 36px;
     color: var(--black);
     background-color: var(--white);
     outline-color: var(--primary);

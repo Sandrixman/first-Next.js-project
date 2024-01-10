@@ -1,0 +1,48 @@
+.productForm {
+    display: grid;
+    grid-template-columns: [start] auto [textstart] auto 1fr auto [end];
+    align-items: center;
+    gap: 20px;
+}
+
+.ratingText {
+    justify-self: end;
+}
+
+.review {
+    grid-column: start/end;
+}
+
+.info {
+    grid-column: textstart/end;
+}
+
+.successSubmit {
+    margin-top: 20px;
+    position: relative;
+    background: var(--green-light);
+    padding: 15px;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+@media (width <= 640px) {
+    .productForm {
+        grid-template-columns: [start] auto [end];
+    }
+
+    .ratingText {
+        justify-self: start;
+    }
+
+    .info {
+        grid-column: start/end;
+    }
+}
