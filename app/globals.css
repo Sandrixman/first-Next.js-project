@@ -12,6 +12,7 @@
     --gray: #b3c0d9;
     --gray-light: #ebebeb;
     --menu: #787d85;
+    --bg-main: #f5f6f8;
     --bg-review: #f9f8ff;
 }
 
@@ -27,7 +28,7 @@ body {
     overflow-x: hidden;
     font-family: "Noto Sans", sans-serif;
     color: var(--black);
-    background: #f5f6f8;
+    background: var(--bg-main);
 }
 
 a {

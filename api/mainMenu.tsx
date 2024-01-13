@@ -1,10 +1,10 @@
-import { FirstLevelMenuItem } from "@/interfaces/menu.interface";
+import { MainMenu } from "@/interfaces/menu.interface";
 import CoursesIcon from "@/public/graduation-hat.svg";
 import ServicesIcon from "@/public/cloud.svg";
 import BooksIcon from "@/public/book.svg";
 import ProductsIcon from "@/public/box.svg";
 
-export const mainMenu: FirstLevelMenuItem[] = [
+export const mainMenu: MainMenu[] = [
     {
         route: "courses",
         name: "Курси",

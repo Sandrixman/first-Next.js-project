@@ -1,20 +1,18 @@
+"use client";
 import { Suspense } from "react";
 import { BuildMenu } from "@/app/main-components";
-import { getCourses, getServices } from "@/api/api";
 import { Search } from "@/components";
 import style from "./Sidebar.module.css";
+import { MainInfo } from "@/interfaces/menu.interface";
 
-export async function Sidebar() {
-    const courses = await getCourses();
-    const services = await getServices();
-
+export function Sidebar(mainInfo: MainInfo) {
     return (
-        <nav className={style.sidebar}>
+        <div className={style.sidebarItems}>
             <Search />
 
             <Suspense fallback={<div>Loading...</div>}>
-                <BuildMenu courses={courses} services={services} />
+                <BuildMenu {...mainInfo} />
             </Suspense>
-        </nav>
+        </div>
     );
 }

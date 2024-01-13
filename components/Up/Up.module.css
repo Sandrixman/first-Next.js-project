@@ -1,0 +1,13 @@
+.up {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.up:hover {
+    background: var(--primary-hover);
+}

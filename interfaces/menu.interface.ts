@@ -1,4 +1,4 @@
-export interface MenuMap {
+export interface MainInfo {
 	[key: string]: MenuItem[];
 }
 export interface PageData {
@@ -11,11 +11,10 @@ export interface PageData {
 export interface MenuItem {
 	_id: string;
 	firstCategory: string;
-	isOpened?: boolean;
 	pages: PageData[]
 }
 
-export interface FirstLevelMenuItem {
+export interface MainMenu {
 	route: string;
 	name: string;
 	icon: JSX.Element;

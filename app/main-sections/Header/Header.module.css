@@ -1,10 +1,12 @@
 .header {
     grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
 }
 
 .logo {
     display: flex;
-    padding: 0 40px;
     color: #7653fc;
     font-size: 30px;
     font-weight: 700;
@@ -13,6 +15,40 @@
 .logo span {
     font-size: 24px;
     font-weight: 200;
+}
+
+@media (width <= 960px) {
+    .header {
+        position: fixed;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        padding: 10px 60px 10px 40px;
+        background: #f5f6f8eb;
+        box-shadow: 0 4px 20px 0 rgba(0 0 0 / 30%);
+        z-index: 1;
+    }
+
+    .mobileMenu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+    }
+
+    .backdrop {
+        width: 100vw;
+        height: 100vh;
+        background: #00000090;
+    }
+}
+
+@media (width <= 480px) {
+    .backdrop {
+        display: none;
+    }
 }
 
 @media (width <= 640px) {

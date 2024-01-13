@@ -10,7 +10,7 @@ export const CoursesSection = ({ products }: CoursesProps) => {
     return (
         <section className={style.coursesSection}>
             {products.map(({ ...props }) => (
-                <Product key={props._id} {...props} />
+                <Product layout key={props._id} {...props} />
             ))}
         </section>
     );

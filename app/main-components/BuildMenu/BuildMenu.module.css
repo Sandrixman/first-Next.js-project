@@ -17,15 +17,15 @@
 
 .secondLevel {
     color: var(--menu);
-    margin: 10px 0;
     width: fit-content;
+    margin-bottom: 20px;
     font-size: 12px;
     font-weight: 300;
     text-transform: uppercase;
+    overflow: hidden;
 }
 
 .thirdLevel {
-    margin: 10px 0;
     font-size: 14px;
     font-weight: 500;
     text-transform: capitalize;
@@ -37,6 +37,10 @@
     cursor: pointer;
 }
 
+.secondLevel div {
+    margin-bottom: 10px;
+}
+
 .activeMenu,
 .firstLevel:hover,
 .thirdLevel:hover {
@@ -46,4 +50,11 @@
 .activeMenu svg,
 .firstLevel:hover svg {
     fill: var(--primary);
+}
+
+@media (width <= 480px) {
+    .firstLevelWrapper {
+        display: grid;
+        justify-items: center;
+    }
 }

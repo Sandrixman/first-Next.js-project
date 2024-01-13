@@ -1,5 +1,6 @@
 import { ReactNode, useState } from "react";
 import { PageData } from "@/interfaces/menu.interface";
+import { motion } from "framer-motion";
 import style from "../BuildMenu.module.css";
 
 interface SecondLevelMenuProps {
@@ -9,6 +10,16 @@ interface SecondLevelMenuProps {
     pages: PageData[];
     buildThirdLevelMenu: (pages: PageData[], route: string) => ReactNode;
 }
+
+const variants = {
+    visible: {
+        transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.1,
+        },
+    },
+    hidden: {},
+};
 
 export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
     route,
@@ -25,9 +36,15 @@ export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
     };
 
     return (
-        <li className={style.secondLevel}>
+        <motion.li
+            variants={variants}
+            initial={"hidden"}
+            animate={openThirdLevel === firstCategory ? "visible" : "hidden"}
+            className={style.secondLevel}
+        >
+            {/* div prevents onToggleThirdLevelMenu from running on child elements */}
             <div onClick={onToggleThirdLevelMenu}>{firstCategory}</div>
-            {openThirdLevel === firstCategory && buildThirdLevelMenu(pages, route)}
-        </li>
+            {buildThirdLevelMenu(pages, route)}
+        </motion.li>
     );
 };

@@ -50,6 +50,10 @@
     grid-column: ratingstart / end;
 }
 
+.ratingTitle {
+    color: var(--primary);
+}
+
 .hr,
 .hr2 {
     grid-column: start / end;
@@ -95,18 +99,11 @@
     gap: 20px;
 }
 
-.closed {
+.review {
     overflow: hidden;
-    max-height: 0;
-    padding: 0;
-}
-
-.opened {
-    overflow: auto;
-    max-height: auto;
     padding: 30px;
     margin-top: -40px;
-    margin-bottom: 30px;
+    background: var(--bg-review);
 }
 
 @media (width <= 1340px) {

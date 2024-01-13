@@ -15,16 +15,25 @@
     min-height: 100vh;
 }
 
+.sidebar {
+    grid-area: sidebar;
+}
+
 @media (width <= 960px) {
     .gridContainer {
         grid-template:
-            "header hamburger" auto
-            "body body" 1fr
-            "footer footer" auto
+            "header" auto
+            "body" 1fr
+            "footer" auto
             / 1fr auto;
     }
 
+    .sidebar {
+        display: none;
+    }
+
     .main {
+        margin-top: 40px;
         padding: 0 40px;
     }
 }

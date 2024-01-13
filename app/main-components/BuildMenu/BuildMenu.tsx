@@ -1,20 +1,18 @@
 "use client";
-import { MenuItem, PageData, MenuMap } from "@/interfaces/menu.interface";
-import { mainMenu } from "@/api/firstLevelMenu";
+import { PageData, MainInfo } from "@/interfaces/menu.interface";
+import { mainMenu } from "@/api/mainMenu";
 import { FirstLevelMenu } from "./LevelsMenu/FirstLevelMenu";
 import { SecondLevelMenu } from "./LevelsMenu/SecondLevelMenu";
 import { ThirdLevelMenu } from "./LevelsMenu/ThirdLevelMenu";
 import style from "./BuildMenu.module.css";
-interface BuildMenuProps {
-    courses: MenuItem[];
-    services: MenuItem[];
-}
 
-export const BuildMenu: React.FC<BuildMenuProps> = ({ courses, services }) => {
+export const BuildMenu: React.FC<MainInfo> = ({ courses, services, books, products }) => {
     // to display menu items that depend on the selected route
-    const menuMap: MenuMap = {
+    const menuMap: MainInfo = {
         courses,
         services,
+        books,
+        products,
     };
 
     const buildFirstLevelMenu = () => {
@@ -39,20 +37,24 @@ export const BuildMenu: React.FC<BuildMenuProps> = ({ courses, services }) => {
     const buildSecondLevelMenu = (route: string) => {
         const currentMenu = menuMap[route];
 
-        return (
-            <ul className={style.secondLevelBlock}>
-                {currentMenu.map((item) => (
-                    <SecondLevelMenu
-                        key={item._id}
-                        route={route}
-                        id={item._id}
-                        firstCategory={item.firstCategory}
-                        pages={item.pages}
-                        buildThirdLevelMenu={buildThirdLevelMenu}
-                    />
-                ))}
-            </ul>
-        );
+        if (currentMenu) {
+            return (
+                <ul className={style.secondLevelBlock}>
+                    {currentMenu.map((item) => (
+                        <SecondLevelMenu
+                            key={item._id}
+                            route={route}
+                            id={item._id}
+                            firstCategory={item.firstCategory}
+                            pages={item.pages}
+                            buildThirdLevelMenu={buildThirdLevelMenu}
+                        />
+                    ))}
+                </ul>
+            );
+        } else {
+            return <div>Error</div>;
+        }
     };
 
     const buildThirdLevelMenu = (pages: PageData[], route: string) => {

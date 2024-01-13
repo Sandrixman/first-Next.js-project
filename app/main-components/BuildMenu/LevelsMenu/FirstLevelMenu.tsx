@@ -35,7 +35,7 @@ export const FirstLevelMenu: React.FC<FirstLevelMenuProps> = ({
     };
 
     return (
-        <li>
+        <li className={style.firstLevelWrapper}>
             <span
                 onClick={(e) => isClickOnHtagOrIcon(e)}
                 className={cn(style.firstLevel, {
