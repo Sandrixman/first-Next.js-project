@@ -6,6 +6,7 @@ export interface PageData {
 	alias: string;
 	title: string;
 	category: string;
+	isOpened?: boolean;
 }
 
 export interface MenuItem {

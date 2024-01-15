@@ -7,6 +7,22 @@
     padding-bottom: 20px;
 }
 
+.skipLink {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--primary);
+    color: var(--white);
+}
+
+.displayed {
+    height: auto;
+    padding: 5px;
+}
+
 @media (width <= 640px) {
     .mainTitle {
         grid-template-columns: auto 1fr;

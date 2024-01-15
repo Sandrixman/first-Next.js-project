@@ -29,6 +29,10 @@ export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
 }) => {
     const [openThirdLevel, setOpenThirdLevel] = useState(false);
 
+    const changedPages = (): PageData[] => {
+        return pages.map((page) => ({ ...page, isOpened: openThirdLevel }));
+    };
+
     const onToggleThirdLevelMenu = (): void => {
         setOpenThirdLevel(!openThirdLevel);
     };
@@ -57,7 +61,7 @@ export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
             >
                 {firstCategory}
             </div>
-            {buildThirdLevelMenu(pages, route)}
+            {openThirdLevel && buildThirdLevelMenu(changedPages(), route)}
         </motion.li>
     );
 };

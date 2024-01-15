@@ -9,6 +9,7 @@ interface ThirdLevelMenuProps {
     alias: string;
     route: string;
     category: string;
+    isOpened: boolean;
 }
 
 const variantsChildren = {
@@ -24,7 +25,12 @@ const variantsChildren = {
     },
 };
 
-export const ThirdLevelMenu: React.FC<ThirdLevelMenuProps> = ({ alias, route, category }) => {
+export const ThirdLevelMenu: React.FC<ThirdLevelMenuProps> = ({
+    alias,
+    route,
+    category,
+    isOpened,
+}) => {
     const pathname = usePathname();
     // needs to compare with the current menu item
     const lastSegment = pathname.substring(pathname.lastIndexOf("/") + 1);
@@ -36,7 +42,11 @@ export const ThirdLevelMenu: React.FC<ThirdLevelMenuProps> = ({ alias, route, ca
                 [style.activeMenu]: alias === lastSegment,
             })}
         >
-            <Link className={style.thirdLevel} href={`/${route}/${alias}`}>
+            <Link
+                tabIndex={isOpened ? 0 : -1}
+                className={style.thirdLevel}
+                href={`/${route}/${alias}`}
+            >
                 {category}
             </Link>
         </motion.li>

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Footer, Header, Sidebar } from "./main-sections";
 import { Up } from "@/components";
-import "./globals.css";
-import style from "./layout.module.css";
 import { getCourses, getServices } from "@/api/api";
 import { MainInfo } from "@/interfaces/menu.interface";
+import "./globals.css";
+import style from "./layout.module.css";
 
 export const metadata: Metadata = {
     title: "Next.js App",

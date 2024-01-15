@@ -4,9 +4,14 @@
     padding-top: 40px;
     grid-template:
         ". header body ." auto
+        ". skipLink body ." auto
         ". sidebar body ." 1fr
         "footer footer footer footer" auto
         / auto 280px minmax(320px, 1200px) auto;
+}
+
+.skipLink {
+    grid-area: skipLink;
 }
 
 .main {

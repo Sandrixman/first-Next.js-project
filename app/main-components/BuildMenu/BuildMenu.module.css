@@ -25,11 +25,6 @@
     overflow: hidden;
 }
 
-.secondLevelTitle:focus-visible {
-    outline-offset: -1px;
-    outline: 1px solid var(--primary);
-}
-
 .thirdLevel {
     font-size: 14px;
     font-weight: 500;

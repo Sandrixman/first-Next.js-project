@@ -59,13 +59,14 @@ export const BuildMenu: React.FC<MainInfo> = ({ courses, services, books, produc
     const buildThirdLevelMenu = (pages: PageData[], route: string) => {
         return (
             <ul>
-                {pages.map(({ _id, alias, category }) => (
+                {pages.map(({ _id, alias, category, isOpened = false }) => (
                     <ThirdLevelMenu
                         key={_id}
                         id={_id}
                         alias={alias}
                         route={route}
                         category={category}
+                        isOpened={isOpened}
                     />
                 ))}
             </ul>

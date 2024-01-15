@@ -1,9 +1,9 @@
 "use client";
 import { Suspense } from "react";
+import { MainInfo } from "@/interfaces/menu.interface";
 import { BuildMenu } from "@/app/main-components";
 import { Search } from "@/components";
 import style from "./Sidebar.module.css";
-import { MainInfo } from "@/interfaces/menu.interface";
 
 export function Sidebar(mainInfo: MainInfo) {
     return (
