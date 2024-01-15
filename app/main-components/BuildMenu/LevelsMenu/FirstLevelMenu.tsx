@@ -7,7 +7,6 @@ interface FirstLevelMenuProps {
     route: string;
     name: string;
     icon: ReactNode;
-    id: number;
     buildSecondLevelMenu: (route: string) => ReactNode;
 }
 
@@ -15,14 +14,13 @@ export const FirstLevelMenu: React.FC<FirstLevelMenuProps> = ({
     route,
     name,
     icon,
-    id,
     buildSecondLevelMenu,
 }) => {
-    const [openSecondLevel, setOpenSecondLevel] = useState<number | null>(null);
+    const [openSecondLevel, setOpenSecondLevel] = useState(false);
 
     const onToggleSecondLevelMenu = (): void => {
         // makes possible to open and close the menu
-        setOpenSecondLevel((prevId) => (prevId === id ? null : id));
+        setOpenSecondLevel(!openSecondLevel);
     };
 
     // opens menu only if clicking on Htag or icon
@@ -34,18 +32,27 @@ export const FirstLevelMenu: React.FC<FirstLevelMenuProps> = ({
         }
     };
 
+    const handleKeyPress = (event: React.KeyboardEvent): void => {
+        if (event.code === "Enter" || event.code === "Space") {
+            event.preventDefault();
+            onToggleSecondLevelMenu();
+        }
+    };
+
     return (
         <li className={style.firstLevelWrapper}>
             <span
-                onClick={(e) => isClickOnHtagOrIcon(e)}
                 className={cn(style.firstLevel, {
-                    [style.activeMenu]: id === openSecondLevel,
+                    [style.activeMenu]: openSecondLevel,
                 })}
+                onClick={isClickOnHtagOrIcon}
+                onKeyDown={handleKeyPress}
+                tabIndex={0}
             >
                 {icon}
                 <Htag tag="h2">{name}</Htag>
             </span>
-            {id === openSecondLevel && buildSecondLevelMenu(route)}
+            {openSecondLevel && buildSecondLevelMenu(route)}
         </li>
     );
 };

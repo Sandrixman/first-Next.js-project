@@ -3,17 +3,17 @@
 :root {
     --black: #3b434e;
     --white: white;
-    --primary: #7653fc;
-    --primary-hover: #412e8d;
+    --primary: #563cb7;
+    --primary-hover: #362677;
     --red: #de0000;
     --orange: #fc836d;
-    --green: #1dc37e;
+    --green: #127a4f;
     --green-light: #c8f8e4;
     --gray: #b3c0d9;
     --gray-light: #ebebeb;
-    --menu: #787d85;
+    --menu: #505359;
     --bg-main: #f5f6f8;
-    --bg-review: #f9f8ff;
+    --bg-review: #eeeef3;
 }
 
 * {

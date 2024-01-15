@@ -27,23 +27,36 @@ export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
     pages,
     buildThirdLevelMenu,
 }) => {
-    const [openThirdLevel, setOpenThirdLevel] = useState<string | null>(null);
+    const [openThirdLevel, setOpenThirdLevel] = useState(false);
 
     const onToggleThirdLevelMenu = (): void => {
-        setOpenThirdLevel((prevCategory) =>
-            prevCategory === firstCategory ? null : firstCategory
-        );
+        setOpenThirdLevel(!openThirdLevel);
+    };
+
+    const handleKeyPress = (event: React.KeyboardEvent): void => {
+        if (event.code === "Enter" || event.code === "Space") {
+            event.preventDefault();
+            onToggleThirdLevelMenu();
+        }
     };
 
     return (
         <motion.li
             variants={variants}
             initial={"hidden"}
-            animate={openThirdLevel === firstCategory ? "visible" : "hidden"}
+            animate={openThirdLevel ? "visible" : "hidden"}
             className={style.secondLevel}
         >
             {/* div prevents onToggleThirdLevelMenu from running on child elements */}
-            <div onClick={onToggleThirdLevelMenu}>{firstCategory}</div>
+            <div
+                className={style.secondLevelTitle}
+                onClick={onToggleThirdLevelMenu}
+                onKeyDown={handleKeyPress}
+                role="button"
+                tabIndex={0}
+            >
+                {firstCategory}
+            </div>
             {buildThirdLevelMenu(pages, route)}
         </motion.li>
     );

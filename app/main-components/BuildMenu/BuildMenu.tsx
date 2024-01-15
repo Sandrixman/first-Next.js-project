@@ -19,13 +19,12 @@ export const BuildMenu: React.FC<MainInfo> = ({ courses, services, books, produc
         return (
             <>
                 <ul>
-                    {mainMenu.map(({ route, name, icon, id }) => (
+                    {mainMenu.map(({ route, name, icon }) => (
                         <FirstLevelMenu
                             key={route}
                             route={route}
                             name={name}
                             icon={icon}
-                            id={id}
                             buildSecondLevelMenu={buildSecondLevelMenu}
                         />
                     ))}

@@ -1,8 +1,10 @@
 .header {
     grid-area: header;
-    display: flex;
-    justify-content: space-between;
     padding: 0 30px;
+}
+
+.mobileMenu {
+    display: none;
 }
 
 .logo {
@@ -19,6 +21,8 @@
 
 @media (width <= 960px) {
     .header {
+        display: grid;
+        grid-template-columns: 1fr 40px;
         position: fixed;
         width: 100vw;
         top: 0;
@@ -30,29 +34,35 @@
     }
 
     .mobileMenu {
+        display: block;
         position: absolute;
         top: 60px;
-        left: 0;
+        left: calc(100vw - 300px);
         width: 100vw;
         height: 100vh;
-        display: flex;
     }
 
     .backdrop {
+        position: absolute;
+        top: 60px;
         width: 100vw;
         height: 100vh;
         background: #00000090;
     }
 }
 
-@media (width <= 480px) {
-    .backdrop {
-        display: none;
+@media (width <= 640px) {
+    .header {
+        padding: 10px 40px 10px 20px;
     }
 }
 
-@media (width <= 640px) {
-    .logo {
-        padding: 0 20px;
+@media (width <= 480px) {
+    .mobileMenu {
+        left: 0;
+    }
+
+    .backdrop {
+        display: none;
     }
 }

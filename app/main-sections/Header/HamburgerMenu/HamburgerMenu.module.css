@@ -6,26 +6,4 @@
     .hamburger {
         display: block;
     }
-
-    .mobileMenu {
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        z-index: 0;
-    }
-
-    .backdrop {
-        width: 100vw;
-        height: 100vh;
-        background: #00000090;
-    }
-}
-
-@media (width <= 480px) {
-    .backdrop {
-        display: none;
-    }
 }

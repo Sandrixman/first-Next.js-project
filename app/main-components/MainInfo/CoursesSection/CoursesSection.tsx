@@ -9,8 +9,8 @@ interface CoursesProps {
 export const CoursesSection = ({ products }: CoursesProps) => {
     return (
         <section className={style.coursesSection}>
-            {products.map(({ ...props }) => (
-                <Product layout key={props._id} {...props} />
+            {products.map(({ ...product }) => (
+                <Product layout key={product._id} {...product} />
             ))}
         </section>
     );

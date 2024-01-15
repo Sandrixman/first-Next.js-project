@@ -15,6 +15,7 @@ export const Header = (mainInfo: MainInfo) => {
 
     useEffect(() => {
         setToggleMenu(false);
+        document.documentElement.style.overflowY = "auto";
     }, [pathname]);
 
     const variants = {
@@ -38,19 +39,15 @@ export const Header = (mainInfo: MainInfo) => {
                     </div>
                 </Link>
                 <HamburgerMenu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
-                {toggleMenu && (
-                    <div className={style.mobileMenuWrapper}>
-                        {/* <div className={style.backdrop}></div> */}
-                        <motion.div
-                            className={style.mobileMenu}
-                            variants={variants}
-                            initial={"closed"}
-                            animate={toggleMenu ? "opened" : "closed"}
-                        >
-                            <Sidebar {...mainInfo} />
-                        </motion.div>
-                    </div>
-                )}
+                {toggleMenu && <div className={style.backdrop}></div>}
+                <motion.div
+                    className={style.mobileMenu}
+                    variants={variants}
+                    initial={"closed"}
+                    animate={toggleMenu ? "opened" : "closed"}
+                >
+                    <Sidebar {...mainInfo} />
+                </motion.div>
             </header>
         </>
     );
