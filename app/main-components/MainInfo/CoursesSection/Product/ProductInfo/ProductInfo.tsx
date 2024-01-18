@@ -39,10 +39,12 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
 
     const scrollToReview = () => {
         setReviewOpened(true);
+
         reviewRef.current?.scrollIntoView({
             behavior: "smooth",
             block: "start",
         });
+        reviewRef.current?.focus();
     };
 
     return (
@@ -52,7 +54,8 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
                 src={process.env.NEXT_PUBLIC_BASE_URL + image}
                 width={70}
                 height={70}
-                alt="course icon"
+                role="image"
+                alt={title}
             />
             <div className={style.titleContainer}>
                 <div className={style.title}>
@@ -110,6 +113,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
                     appearance="ghost"
                     arrow={isReviewOpened ? "down" : "right"}
                     onOpen={onOpen}
+                    aria-expanded={isReviewOpened}
                 >
                     Відгуки
                 </Button>

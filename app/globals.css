@@ -23,7 +23,7 @@
 }
 
 *:focus-visible {
-    outline: 1px solid var(--primary);
+    outline: 1px dashed var(--primary);
     outline-offset: -1px;
 }
 
@@ -43,4 +43,8 @@ a {
 
 li {
     list-style-type: none;
+}
+
+button {
+    font-family: "Noto Sans", sans-serif;
 }

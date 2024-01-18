@@ -16,13 +16,18 @@
 }
 
 .secondLevel {
+    overflow: hidden;
+}
+
+.secondLevelItem {
     color: var(--menu);
-    width: fit-content;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 12px;
     font-weight: 300;
     text-transform: uppercase;
-    overflow: hidden;
+    border: none;
+    background: transparent;
+    cursor: pointer;
 }
 
 .thirdLevel {

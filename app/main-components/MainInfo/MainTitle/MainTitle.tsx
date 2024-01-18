@@ -41,7 +41,7 @@ export const MainTitle = ({ course, products, setSort, sort }: MainTitleProps) =
             </a>
             <section className={style.mainTitle} ref={mainRef} tabIndex={0}>
                 <Htag tag="h1">{course.title}</Htag>
-                <Tag size="l" color="gray">
+                <Tag size="l" color="gray" aria-label={products.length + "курсів"}>
                     {products.length}
                 </Tag>
                 <Sort sort={sort} setSort={setSort} />

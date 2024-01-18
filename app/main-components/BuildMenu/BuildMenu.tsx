@@ -73,5 +73,5 @@ export const BuildMenu: React.FC<MainInfo> = ({ courses, services, books, produc
         );
     };
 
-    return <>{buildFirstLevelMenu()}</>;
+    return <nav role="navigation">{buildFirstLevelMenu()}</nav>;
 };

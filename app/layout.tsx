@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Footer, Header, Sidebar } from "./main-sections";
 import { Up } from "@/components";
 import { getCourses, getServices } from "@/api/api";
@@ -55,11 +56,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <head></head>
             <body className={style.gridContainer}>
                 <Header {...mainInfo} />
-                <nav className={style.sidebar}>
+                <Suspense fallback={<div>Loading...</div>}>
                     <Sidebar {...mainInfo} />
-                </nav>
+                    <main className={style.main} role="main">
+                        {children}
+                    </main>
+                </Suspense>
                 <Footer />
-                <main className={style.main}>{children}</main>
                 <Up />
             </body>
         </html>

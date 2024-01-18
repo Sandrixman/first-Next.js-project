@@ -1,10 +1,7 @@
 "use client";
-import { useState } from "react";
 import { Htag, P, Rating, Tag } from "@/components";
 
 export default function Home(): JSX.Element {
-    const [rating, setRating] = useState(0);
-
     return (
         <>
             <Htag tag="h1">Курси по Photoshop</Htag>
@@ -27,7 +24,7 @@ export default function Home(): JSX.Element {
             <Tag size="s" color="green">
                 -10 000 ₽
             </Tag>
-            <Rating rating={rating} setRating={setRating} isEditable />
+            <Rating isEditable />
         </>
     );
 }

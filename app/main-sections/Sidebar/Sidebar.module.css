@@ -1,11 +1,12 @@
-.sidebarItems {
+.sidebar {
+    grid-area: sidebar;
     display: grid;
     grid-template-rows: auto 1fr;
     padding: 20px 30px;
 }
 
 @media (width <= 960px) {
-    .sidebarItems {
+    .sidebar {
         width: 300px;
         min-height: 100vh;
         background: var(--bg-main);
@@ -13,7 +14,7 @@
 }
 
 @media (width <= 480px) {
-    .sidebarItems {
+    .sidebar {
         width: 100vw;
     }
 }

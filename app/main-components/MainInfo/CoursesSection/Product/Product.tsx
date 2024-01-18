@@ -32,7 +32,11 @@ const MotionProduct = forwardRef(
                     initial={"hidden"}
                     animate={isReviewOpened ? "visible" : "hidden"}
                 >
-                    <Card className={style.review} ref={reviewRef}>
+                    <Card
+                        className={style.review}
+                        ref={reviewRef}
+                        tabIndex={!isReviewOpened ? 0 : -1}
+                    >
                         {product.reviews.map(({ ...review }) => (
                             <ProductReview key={review._id} {...review}></ProductReview>
                         ))}

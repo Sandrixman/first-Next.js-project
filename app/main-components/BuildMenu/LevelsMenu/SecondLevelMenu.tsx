@@ -51,17 +51,15 @@ export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
             animate={openThirdLevel ? "visible" : "hidden"}
             className={style.secondLevel}
         >
-            {/* div prevents onToggleThirdLevelMenu from running on child elements */}
-            <div
-                className={style.secondLevelTitle}
+            {/* button prevents onToggleThirdLevelMenu from running on child elements */}
+            <button
+                className={style.secondLevelItem}
                 onClick={onToggleThirdLevelMenu}
                 onKeyDown={handleKeyPress}
-                role="button"
-                tabIndex={0}
             >
                 {firstCategory}
-            </div>
-            {openThirdLevel && buildThirdLevelMenu(changedPages(), route)}
+            </button>
+            {buildThirdLevelMenu(changedPages(), route)}
         </motion.li>
     );
 };
