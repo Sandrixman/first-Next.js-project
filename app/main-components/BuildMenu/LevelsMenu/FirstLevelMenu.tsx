@@ -40,8 +40,8 @@ export const FirstLevelMenu: React.FC<FirstLevelMenuProps> = ({
     };
 
     return (
-        <li className={style.firstLevelWrapper}>
-            <span
+        <li className={style.firstLevelWrapper} aria-expanded={openSecondLevel} role="listItem">
+            <button
                 className={cn(style.firstLevel, {
                     [style.activeMenu]: openSecondLevel,
                 })}
@@ -51,7 +51,7 @@ export const FirstLevelMenu: React.FC<FirstLevelMenuProps> = ({
             >
                 {icon}
                 <Htag tag="h2">{name}</Htag>
-            </span>
+            </button>
             {openSecondLevel && buildSecondLevelMenu(route)}
         </li>
     );

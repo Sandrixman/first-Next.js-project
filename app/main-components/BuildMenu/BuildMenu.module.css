@@ -7,6 +7,9 @@
     font-size: 18px;
     font-weight: 500;
     color: var(--menu);
+    border: none;
+    background: transparent;
+    cursor: pointer;
 }
 
 .secondLevelBlock {
@@ -36,14 +39,9 @@
     text-transform: capitalize;
 }
 
-.firstLevel div,
-.secondLevel div,
-.firstLevel svg {
-    cursor: pointer;
-}
-
-.secondLevel div {
-    margin-bottom: 10px;
+.firstLevel,
+.secondLevelItem {
+    font-family: inherit;
 }
 
 .activeMenu,

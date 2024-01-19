@@ -14,9 +14,13 @@
     grid-area: skipLink;
 }
 
+.sidebarContainer {
+    grid-area: sidebar;
+}
+
 .main {
     grid-area: body;
-    padding-right: 80px;
+    padding-right: 50px;
     min-height: 100vh;
 }
 
@@ -29,7 +33,7 @@
             / 1fr auto;
     }
 
-    .sidebar {
+    .sidebarContainer {
         display: none;
     }
 

@@ -1,16 +1,17 @@
+import moment from "moment";
+import "moment/locale/uk";
+import { P } from "@/components";
 import style from "./Footer.module.css";
-import cn from "classnames";
-import { format } from "date-fns";
 
 export const Footer = () => {
     return (
-        <footer className={cn(style.footer, style["footer-container"])}>
-            <p>OwlTop © {format(new Date(), "yyyy")} All rights reserved</p>
+        <footer className={style.footer}>
+            <P size="s">OwlTop © {moment(new Date()).format("yyyy")} All rights reserved</P>
             <a href="#" target="_blank">
-                <p>Terms of use</p>
+                <P size="s">Умови використання</P>
             </a>
             <a href="#" target="_blank">
-                <p>Privacy Policy</p>
+                <P size="s">Політика конфіденційності</P>
             </a>
         </footer>
     );

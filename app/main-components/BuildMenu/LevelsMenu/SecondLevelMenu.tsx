@@ -46,10 +46,12 @@ export const SecondLevelMenu: React.FC<SecondLevelMenuProps> = ({
 
     return (
         <motion.li
+            className={style.secondLevel}
             variants={variants}
             initial={"hidden"}
             animate={openThirdLevel ? "visible" : "hidden"}
-            className={style.secondLevel}
+            aria-expanded={openThirdLevel}
+            role="listItem"
         >
             {/* button prevents onToggleThirdLevelMenu from running on child elements */}
             <button

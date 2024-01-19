@@ -1,6 +1,6 @@
 .header {
     grid-area: header;
-    padding: 0 30px;
+    padding: 0 50px;
 }
 
 .mobileMenu {
@@ -37,7 +37,7 @@
         display: block;
         position: absolute;
         top: 60px;
-        left: calc(100vw - 300px);
+        left: calc(100vw - 350px);
         width: 100vw;
         height: 100vh;
     }

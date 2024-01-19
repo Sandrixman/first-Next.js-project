@@ -1,6 +1,20 @@
-import { getCourseByAlias, getCourses, getProducts } from "@/api/api";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getCourseByAlias, getCourses, getProducts } from "@/api/api";
 import { Vacancies, Adventages, Skills, MainInfo } from "@/app/main-components";
+
+export const generateMetadata = async ({
+    params,
+}: {
+    params: { alias: string };
+}): Promise<Metadata> => {
+    const course = await getCourseByAlias(params.alias);
+
+    return {
+        title: course.metaTitle,
+        description: course.metaDescription,
+    };
+};
 
 export async function generateStaticParams() {
     try {
