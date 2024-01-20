@@ -1,0 +1,8 @@
+version: "4"
+services:
+    app:
+        image: first-next-project
+        container_name: first-next-project
+        restart: always
+        ports:
+            - 3000:3000
