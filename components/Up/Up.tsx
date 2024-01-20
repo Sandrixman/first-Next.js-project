@@ -23,7 +23,7 @@ export const Up = () => {
 
     return (
         <motion.div className={style.up} animate={controls} initial={{ opacity: 0 }}>
-            <ButtonIcon icon="up" onClick={scrollToTop} />
+            <ButtonIcon icon="up" onClick={scrollToTop} aria-label="Вгору" />
         </motion.div>
     );
 };

@@ -8,12 +8,17 @@ export const generateMetadata = async ({
 }: {
     params: { alias: string };
 }): Promise<Metadata> => {
-    const course = await getCourseByAlias(params.alias);
-
-    return {
-        title: course.metaTitle,
-        description: course.metaDescription,
-    };
+    try {
+        const course = await getCourseByAlias(params.alias);
+        return {
+            title: course.metaTitle,
+            description: course.metaDescription,
+        };
+    } catch {
+        return {
+            title: "Page",
+        };
+    }
 };
 
 export async function generateStaticParams() {
@@ -44,8 +49,7 @@ export default async function Course({ params }: { params: { alias: string } }) 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
         if (error.response) {
-            console.log(error.response.data.error);
-            notFound();
+            return <p>{error.response.data.erro}</p>;
         }
         return <p>Something went wrong...</p>;
     }

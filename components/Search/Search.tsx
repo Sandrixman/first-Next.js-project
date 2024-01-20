@@ -12,8 +12,10 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
     const router = useRouter();
 
     const OnSearch = () => {
-        router.push(`/search/${search}`);
-        setSearch("");
+        if (search) {
+            router.push(`/search/${search}`);
+            setSearch("");
+        }
     };
 
     return (
