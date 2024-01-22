@@ -11,7 +11,7 @@ jobs:
         steps:
             - uses: actions/checkout@master
             - name: Publish to Registry
-              uses: elgohr/Publish-Docker-Github-Action@master
+              uses: elgohr/Publish-Docker-Github-Action@v4
               with:
                   registry: docker.pkg.github.com
                   name: docker.pkg.github.com/Sandrixman/first-Next.js-project/first-Next.js-project
