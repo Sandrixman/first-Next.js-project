@@ -1,5 +1,7 @@
 /** @type {import("next").NextConfig} */
 module.exports = {
+    basePath: "/first-Next.js-project",
+    assetPrefix: "/first-Next.js-project",
     images: {
         remotePatterns: [
             {

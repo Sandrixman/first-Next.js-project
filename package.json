@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "next dev",
         "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
-        "build": "next build",
+        "build": "next build && next export",
         "start": "next start",
         "stylelint": "stylelint \"**/*.css\" --fix",
         "prepare": "husky install"
