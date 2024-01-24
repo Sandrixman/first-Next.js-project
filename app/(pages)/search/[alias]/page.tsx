@@ -1,5 +1,3 @@
-// /pages/search/[alias].js
-"use client";
 import { Htag } from "@/components";
 
 export default function Search({ params }: { params: { alias: string } }): JSX.Element {
