@@ -1,5 +1,6 @@
 /** @type {import("next").NextConfig} */
 module.exports = {
+    output: "export",
     basePath: "/first-Next.js-project",
     assetPrefix: "/first-Next.js-project",
     images: {
