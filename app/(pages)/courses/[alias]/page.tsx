@@ -32,7 +32,7 @@ export async function generateStaticParams() {
     }
 }
 
-export default async function Course({ params }: { params: { alias: string } }) {
+export default async function CoursePage({ params }: { params: { alias: string } }) {
     try {
         const course = await getCourseByAlias(params.alias);
 

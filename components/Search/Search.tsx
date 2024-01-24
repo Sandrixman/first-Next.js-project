@@ -11,22 +11,23 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
     const [search, setSearch] = useState("");
     const router = useRouter();
 
-    const OnSearch = () => {
+    const OnSearch = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         if (search) {
-            router.push(`/search/${search}`);
-            setSearch("");
+            router.push(`/search?search=${search}`);
         }
+        setSearch("");
     };
 
     return (
-        <form className={cn(style.search, className)} {...props} role="Search">
+        <form className={cn(style.search, className)} {...props} role="Search" onSubmit={OnSearch}>
             <Input
                 className={style.searchInput}
                 placeholder="Пошук по сайту"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />
-            <Button className={style.searchButton} onClick={OnSearch} aria-label="Пошук по сайту">
+            <Button className={style.searchButton} type="submit" aria-label="Пошук по сайту">
                 <SearchIcon className={style.searchIcon} />
             </Button>
         </form>
