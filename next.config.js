@@ -1,8 +1,8 @@
 /** @type {import("next").NextConfig} */
 module.exports = {
-    images: {
-        output: "./out",
+    output: "standalone",
 
+    images: {
         remotePatterns: [
             {
                 protocol: "https",
