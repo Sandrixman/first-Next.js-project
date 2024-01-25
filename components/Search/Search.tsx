@@ -23,11 +23,11 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
         <form className={cn(style.search, className)} {...props} role="Search" onSubmit={OnSearch}>
             <Input
                 className={style.searchInput}
-                placeholder="Пошук по сайту"
+                placeholder="Пошук курсів"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />
-            <Button className={style.searchButton} type="submit" aria-label="Пошук по сайту">
+            <Button className={style.searchButton} type="submit" aria-label="Пошук курсів">
                 <SearchIcon className={style.searchIcon} />
             </Button>
         </form>

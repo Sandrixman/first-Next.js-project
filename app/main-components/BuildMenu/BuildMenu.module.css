@@ -50,6 +50,10 @@
     color: var(--primary);
 }
 
+.activeMenu a {
+    border-bottom: 1px solid var(--primary);
+}
+
 .activeMenu svg,
 .firstLevel:hover svg {
     fill: var(--primary);

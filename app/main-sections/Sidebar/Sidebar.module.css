@@ -4,6 +4,12 @@
     padding: 20px 30px 20px 50px;
 }
 
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 @media (width <= 960px) {
     .sidebar {
         width: 350px;

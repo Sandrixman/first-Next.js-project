@@ -9,12 +9,13 @@ import StarIcon from "@/public/star.svg";
 export const Rating = ({ isEditable = false, rating = 0, ...props }: RatingProps): JSX.Element => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
     const [currentRating, setCurrentRating] = useState(rating);
+    const [clickedRating, setClickedRating] = useState(rating);
     const ratingArrayRef = useRef<(HTMLSpanElement | null)[]>([]);
 
     useEffect(() => {
         constructRating(currentRating);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [currentRating]);
+    }, [currentRating, clickedRating]);
 
     const computeFocus = (r: number, i: number): number => {
         if (!isEditable) {
@@ -36,7 +37,9 @@ export const Rating = ({ isEditable = false, rating = 0, ...props }: RatingProps
                         [style.filled]: currentRating > i,
                         [style.editable]: isEditable,
                     })}
+                    onClick={() => changeClickedRating(i + 1)}
                     onMouseEnter={() => changeRatingDisplay(i + 1)}
+                    onMouseLeave={() => changeRatingDisplay(clickedRating)}
                     tabIndex={computeFocus(currentRating, i)}
                     onKeyDown={handleKeyDown}
                     ref={(r) => ratingArrayRef.current?.push(r)}
@@ -47,6 +50,13 @@ export const Rating = ({ isEditable = false, rating = 0, ...props }: RatingProps
         });
 
         setRatingArray(updatedRating);
+    };
+
+    const changeClickedRating = (i: number) => {
+        if (!isEditable) {
+            return;
+        }
+        setClickedRating(i);
     };
 
     const changeRatingDisplay = (i: number) => {

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { HamburgerMenu } from "./HamburgerMenu/HamburgerMenu";
 import { MainInfo } from "@/interfaces/menu.interface";
-import { Sidebar } from "..";
+import { Sidebar } from "../Sidebar/Sidebar";
 import Logo from "@/public/logo.svg";
 import style from "./Header.module.css";
 
