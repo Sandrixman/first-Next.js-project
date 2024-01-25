@@ -25,6 +25,10 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+            - name: Configure Git identity
+              run: |
+                  git config --global user.email "sandrix28101981@gmail.com"
+                  git config --global user.name "Oleksander Novak"
             - name: Detect package manager
               id: detect-package-manager
               run: |
