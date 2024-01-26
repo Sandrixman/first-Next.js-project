@@ -1,0 +1,127 @@
+.gridContainer {
+    display: grid;
+    min-height: 100vh;
+    padding-top: 40px;
+    grid-template:
+        ". header body ." auto
+        ". skipLink body ." auto
+        ". sidebar body ." 1fr
+        "footer footer footer footer" auto
+        / auto 280px minmax(320px, 1200px) auto;
+}
+
+.skipLink {
+    grid-area: skipLink;
+}
+
+.sidebarContainer {
+    grid-area: sidebar;
+}
+
+.main {
+    grid-area: body;
+    padding-right: 50px;
+}
+
+.banner {
+    width: 1000px;
+    height: 780px;
+    margin: auto;
+    background-image: url("../public/images/algorithm_1280.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bannerButton {
+    position: absolute;
+    left: calc(50% - 90px);
+    bottom: 254px;
+}
+
+.bannerTitle {
+    text-align: center;
+}
+
+.modalWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (width <= 1340px) {
+    .banner {
+        width: 650px;
+        height: 650px;
+    }
+
+    .bannerButton {
+        position: absolute;
+        left: calc(50% - 18px);
+        bottom: 391px;
+    }
+}
+
+@media (width <= 960px) {
+    .gridContainer {
+        grid-template:
+            "header" auto
+            "body" 1fr
+            "footer" auto
+            / 1fr auto;
+    }
+
+    .sidebarContainer {
+        display: none;
+    }
+
+    .main {
+        margin-top: 40px;
+        padding: 0 40px;
+    }
+
+    .banner {
+        width: 580px;
+    }
+
+    .bannerButton {
+        left: calc(50% - 120px);
+        bottom: 366px;
+    }
+}
+
+@media (width <= 640px) {
+    .main {
+        padding: 0 20px;
+    }
+
+    .banner {
+        width: 440px;
+        height: 460px;
+    }
+
+    .bannerTitle {
+        font-size: 22px;
+    }
+
+    .bannerButton {
+        left: calc(50% - 90px);
+        bottom: 489px;
+    }
+}
+
+@media (width <= 480px) {
+    .banner {
+        width: 300px;
+        height: 340px;
+    }
+
+    .bannerTitle {
+        font-size: 18px;
+    }
+
+    .bannerButton {
+        left: calc(50% - 62px);
+        top: 246px;
+    }
+}

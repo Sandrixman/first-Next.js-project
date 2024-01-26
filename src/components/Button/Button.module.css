@@ -1,0 +1,97 @@
+.button {
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.bigButton {
+    width: 390px;
+    height: 218px;
+    font-size: 38px;
+    line-height: 54px;
+}
+
+.primary {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.primary:hover {
+    background: var(--primary-hover);
+}
+
+.ghost {
+    border: 1px solid var(--gray-light);
+}
+
+.ghost:hover {
+    color: var(--white);
+    background: var(--primary-hover);
+    border: none;
+}
+
+.ghost:hover svg {
+    fill: var(--white);
+}
+
+.arrow {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.right {
+    transform: rotate(0deg);
+    transition: all 0.3s;
+}
+
+.down {
+    transform: rotate(90deg);
+    transition: all 0.3s;
+}
+
+@media (width <= 1340px) {
+    .bigButton {
+        width: 253px;
+        height: 142px;
+        font-size: 30px;
+        line-height: 42px;
+    }
+}
+
+@media (width <= 960px) {
+    .bigButton {
+        width: 228px;
+        height: 126px;
+        font-size: 26px;
+        line-height: 36px;
+    }
+}
+
+@media (width <= 640px) {
+    .bigButton {
+        width: 172px;
+        height: 95px;
+        font-size: 20px;
+        line-height: 26px;
+    }
+}
+
+@media (width <= 480px) {
+    .button {
+        width: 110px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .bigButton {
+        width: 118px;
+        height: 66px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
