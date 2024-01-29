@@ -4,6 +4,6 @@ export interface RatingProps extends DetailedHTMLProps<HTMLAttributes<HTMLUListE
     isEditable?: boolean;
     rating?: number;
     name?: string;
-    onRatingChange: (newRating: number) => void;
+    onRatingChange?: (newRating: number) => void;
 
 }

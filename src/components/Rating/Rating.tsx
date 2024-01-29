@@ -62,7 +62,7 @@ export const Rating = ({
             return;
         }
         setClickedRating(i);
-        onRatingChange(i);
+        if (onRatingChange) onRatingChange(i);
     };
 
     const changeRatingDisplay = (i: number) => {
