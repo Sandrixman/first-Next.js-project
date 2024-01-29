@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { ModalProps } from "./Modal.props";
+import { ButtonIcon } from "../ButtonIcon/ButtonIcon";
 import style from "./Modal.module.css";
 
-export const Modal = ({ onModal, openModal, children, ...props }: ModalProps): JSX.Element => {
+export const Modal = ({ onModal, openModal, children }: ModalProps): JSX.Element => {
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.code === "Escape") {
@@ -26,8 +27,14 @@ export const Modal = ({ onModal, openModal, children, ...props }: ModalProps): J
 
     return (
         <div className={style.backdrop} onClick={onBackdropClick}>
-            <div className={style.modal} {...props}>
+            <div className={style.modalContentWrapper}>
                 {children}
+                <ButtonIcon
+                    className={style.closeButton}
+                    icon="close"
+                    appearance="white"
+                    onClick={onModal}
+                />
             </div>
         </div>
     );

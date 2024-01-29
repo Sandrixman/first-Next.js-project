@@ -6,7 +6,12 @@ import style from "./Rating.module.css";
 import cn from "classnames";
 import StarIcon from "@/src/public/star.svg";
 
-export const Rating = ({ isEditable = false, rating = 0, ...props }: RatingProps): JSX.Element => {
+export const Rating = ({
+    isEditable = false,
+    rating = 0,
+    onRatingChange,
+    ...props
+}: RatingProps): JSX.Element => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
     const [currentRating, setCurrentRating] = useState(rating);
     const [clickedRating, setClickedRating] = useState(rating);
@@ -57,6 +62,7 @@ export const Rating = ({ isEditable = false, rating = 0, ...props }: RatingProps
             return;
         }
         setClickedRating(i);
+        onRatingChange(i);
     };
 
     const changeRatingDisplay = (i: number) => {

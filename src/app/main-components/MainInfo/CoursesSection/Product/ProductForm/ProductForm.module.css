@@ -1,23 +1,72 @@
 .productForm {
     display: grid;
-    grid-template-columns: [start] auto [textstart] auto 1fr auto [end];
+    grid-template:
+        "nameFild titleFild ratingText ratingFild" auto
+        "nameError titleError . ratingError" 30px
+        "textFild textFild textFild textFild" 1fr
+        "textError textError textError textError" 30px
+        "formButton formInfo formInfo formInfo" auto
+        "successSubmit successSubmit successSubmit successSubmit" auto
+        / minmax(100px, 200px) minmax(100px, 300px) 1fr auto;
     align-items: center;
-    gap: 20px;
+    gap: 0 20px;
+}
+
+.errorField {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: red;
+    font-size: 10px;
+}
+
+.nameFild {
+    grid-area: nameFild;
+}
+
+.name {
+    grid-area: nameError;
+}
+
+.titleFild {
+    grid-area: titleFild;
+}
+
+.title {
+    grid-area: titleError;
 }
 
 .ratingText {
+    grid-area: ratingText;
     justify-self: end;
 }
 
-.review {
-    grid-column: start/end;
+.ratingFild {
+    grid-area: ratingFild;
+    display: flex;
 }
 
-.info {
-    grid-column: textstart/end;
+.rating {
+    grid-area: ratingError;
+}
+
+.textFild {
+    grid-area: textFild;
+}
+
+.text {
+    grid-area: textError;
+}
+
+.formButton {
+    grid-area: formButton;
+}
+
+.formInfo {
+    grid-area: formInfo;
 }
 
 .successSubmit {
+    grid-area: successSubmit;
     margin-top: 20px;
     position: relative;
     background: var(--green-light);
