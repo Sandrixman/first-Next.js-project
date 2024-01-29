@@ -9,3 +9,4 @@ export * from './Input/Input';
 export * from './Textarea/Textarea';
 export * from './Search/Search';
 export * from './Up/Up';
+export * from './Modal/Modal';

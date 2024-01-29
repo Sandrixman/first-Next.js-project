@@ -161,4 +161,9 @@
     .consultationForm {
         padding: 15px;
     }
+
+    .submitButton {
+        width: 100%;
+        font-size: 10px;
+    }
 }

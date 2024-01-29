@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Formik, Form, FormikHelpers, Field } from "formik";
 import { LoadingButton } from "@mui/lab";
 import SendIcon from "@mui/icons-material/Send";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { Button, Htag, Input, P } from "@/src/components";
-import { Modal } from "../components/Modal/Modal";
+import { Button, Htag, Input, P, Modal } from "@/src/components";
 import style from "./layout.module.css";
 
 export default function Home(): JSX.Element {
@@ -29,6 +28,12 @@ export default function Home(): JSX.Element {
         phone: "",
     };
 
+    interface ProductFormValues {
+        name: string;
+        email: string;
+        phone: string;
+    }
+
     const handleSubmit = (
         values: ProductFormValues,
         { resetForm }: FormikHelpers<ProductFormValues>
@@ -40,18 +45,11 @@ export default function Home(): JSX.Element {
                 toast.success(`${values.name} Ваша завка зареєстрована`, {
                     position: "top-center",
                 });
-            }, 2000);
+                resetForm();
+            }, 1000);
         };
         delayLoading();
-
-        resetForm();
     };
-
-    interface ProductFormValues {
-        name: string;
-        email: string;
-        phone: string;
-    }
 
     return (
         <div className={style.banner}>
@@ -80,18 +78,10 @@ export default function Home(): JSX.Element {
                                     Заповніть форму і ми зв&apos;яжемося з Вами найближчим часом:
                                 </P>
                             </div>
-                            <Field
-                                as={Input}
-                                placeholder="Ім'я"
-                                id="name"
-                                name="name"
-                                type="text"
-                                required
-                            />
+                            <Field as={Input} placeholder="Ім'я" name="name" type="text" required />
                             <Field
                                 as={Input}
                                 placeholder="Пошта"
-                                id="email"
                                 name="email"
                                 type="text"
                                 required
@@ -99,7 +89,6 @@ export default function Home(): JSX.Element {
                             <Field
                                 as={Input}
                                 placeholder="Телефон"
-                                id="phone"
                                 name="phone"
                                 type="text"
                                 required

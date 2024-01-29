@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { ModalProps } from "./Modal.props";
 import { ButtonIcon } from "../ButtonIcon/ButtonIcon";
