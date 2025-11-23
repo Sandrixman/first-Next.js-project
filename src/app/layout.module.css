@@ -33,13 +33,6 @@
     background-repeat: no-repeat;
 }
 
-.bannerButton {
-    position: absolute;
-    left: calc(50% - 90px);
-    bottom: 254px;
-    color: var(--primary);
-}
-
 .bannerTitle {
     width: 600px;
     margin: auto;
@@ -50,40 +43,10 @@
     font-size: 34px;
 }
 
-.modalWrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.consultationForm {
-    display: grid;
-    gap: 20px;
-    position: relative;
-    width: 60vw;
-    max-width: 450px;
-    min-height: 290px;
-    max-height: 75vh;
-    padding: 40px;
-    border-radius: 10px;
-    background: var(--bg-main);
-}
-
-.submitButton {
-    width: 220px;
-    justify-self: center;
-}
-
 @media (width <= 1340px) {
     .banner {
         width: 650px;
         height: 650px;
-    }
-
-    .bannerButton {
-        position: absolute;
-        left: calc(50% - 18px);
-        bottom: 391px;
     }
 }
 
@@ -101,22 +64,19 @@
     }
 
     .main {
+        display: flex;
         margin-top: 40px;
         padding: 0 40px;
     }
 
     .banner {
+        position: relative;
         width: 580px;
     }
 
     .bannerTitle {
         padding-top: 40px;
         font-size: 30px;
-    }
-
-    .bannerButton {
-        left: calc(50% - 120px);
-        bottom: 366px;
     }
 }
 
@@ -135,35 +95,16 @@
         font-size: 22px;
         padding-top: 20px;
     }
-
-    .bannerButton {
-        left: calc(50% - 90px);
-        bottom: 489px;
-    }
 }
 
 @media (width <= 480px) {
     .banner {
         width: 300px;
-        height: 340px;
+        height: 450px;
     }
 
     .bannerTitle {
         width: 300px;
         font-size: 18px;
-    }
-
-    .bannerButton {
-        left: calc(50% - 62px);
-        top: 246px;
-    }
-
-    .consultationForm {
-        padding: 15px;
-    }
-
-    .submitButton {
-        width: 100%;
-        font-size: 10px;
     }
 }

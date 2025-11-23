@@ -6,5 +6,6 @@ export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTML
     size?: 'normal' | 'big';
     arrow?: 'right' | 'down' | 'none';
     onOpen?: () => void;
-    open?: boolean
+    open?: boolean;
+    loading?: boolean;
 }

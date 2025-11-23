@@ -10,6 +10,7 @@ export const Button = ({
     onOpen,
     children,
     className,
+    loading = false,
     ...props
 }: ButtonProps): JSX.Element => {
     return (
@@ -20,10 +21,12 @@ export const Button = ({
                 [style.ghost]: appearance === "ghost",
                 [style.bigButton]: size === "big",
             })}
+            disabled={loading}
             {...props}
         >
+            {loading && <span className={style.spinner}></span>}
             {children}
-            {arrow !== "none" && (
+            {arrow !== "none" && !loading && (
                 <span
                     className={cn(style.arrow, {
                         [style.down]: arrow === "down",

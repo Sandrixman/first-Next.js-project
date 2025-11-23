@@ -1,0 +1,67 @@
+.bannerButton {
+    position: absolute;
+    left: calc(50% - 90px);
+    top: 416px;
+    color: var(--primary);
+}
+
+.consultationForm {
+    display: grid;
+    gap: 20px;
+    position: relative;
+    width: 60vw;
+    max-width: 450px;
+    min-height: 290px;
+    max-height: 75vh;
+    padding: 40px;
+    border-radius: 10px;
+    background: var(--bg-main);
+}
+
+.submitButton {
+    width: 220px;
+    justify-self: center;
+}
+
+@media (width <= 1340px) {
+    .banner {
+        width: 650px;
+        height: 650px;
+    }
+
+    .bannerButton {
+        position: absolute;
+        left: calc(50% - 18px);
+        top: 356px;
+    }
+}
+
+@media (width <= 960px) {
+    .bannerButton {
+        left: calc(50% - 119px);
+        top: 317px;
+    }
+}
+
+@media (width <= 640px) {
+    .bannerButton {
+        left: calc(50% - 90px);
+        top: 224px;
+    }
+}
+
+@media (width <= 480px) {
+    .bannerButton {
+        left: calc(50% - 62px);
+        top: 221px;
+    }
+
+    .consultationForm {
+        padding: 15px;
+    }
+
+    .submitButton {
+        width: 100%;
+        font-size: 10px;
+    }
+}

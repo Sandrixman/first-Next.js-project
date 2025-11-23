@@ -5,8 +5,9 @@ import { Footer, Header, Sidebar } from "./main-sections";
 import { Up } from "@/src/components";
 import { getCourses, getServices } from "@/src/api/api";
 import { MainInfo } from "@/src/interfaces/menu.interface";
-import "./globals.css";
+import { books, products } from "@/src/helpers/data";
 import style from "./layout.module.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Next.js App",
@@ -18,34 +19,7 @@ const notoSans = Noto_Sans({ weight: ["400"], subsets: ["latin"] });
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
     const courses = await getCourses();
     const services = await getServices();
-    const books = [
-        {
-            _id: "1321safasfsa321",
-            firstCategory: "books",
-            pages: [
-                {
-                    _id: "asf4as65f4a654f",
-                    alias: "alias",
-                    title: "title",
-                    category: "category",
-                },
-            ],
-        },
-    ];
-    const products = [
-        {
-            _id: "1321safasfsa321",
-            firstCategory: "products",
-            pages: [
-                {
-                    _id: "asf4as65f4a654f",
-                    alias: "alias",
-                    title: "title",
-                    category: "category",
-                },
-            ],
-        },
-    ];
+
 
     const mainInfo: MainInfo = {
         courses,
