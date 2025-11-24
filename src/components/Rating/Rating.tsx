@@ -47,7 +47,9 @@ export const Rating = ({
                     onMouseLeave={() => changeRatingDisplay(clickedRating)}
                     tabIndex={computeFocus(currentRating, i)}
                     onKeyDown={handleKeyDown}
-                    ref={(r) => ratingArrayRef.current?.push(r)}
+                    ref={(r) => {
+                        ratingArrayRef.current?.push(r);
+                    }}
                 >
                     <StarIcon />
                 </span>
